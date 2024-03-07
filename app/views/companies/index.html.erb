@@ -1,0 +1,14 @@
+
+<div class="container justify-content-start">
+  <h3 class="header mt-3 mb-3"><strong>Registered Companies</strong></h3>
+</div>
+
+<div class="cards-container">
+  <% @companies.each do |company| %>
+      <div class="card-product-infos">
+      <ul>
+        <li><%= company.name %></li>
+      </ul>
+  </div>
+  <% end  %>
+</div>

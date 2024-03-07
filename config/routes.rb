@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :matches, only: %i[index]
   end
 
-  resources :companies, except: :index do
+  resources :companies do
     resources :jobs, only: %i[new create]
   end
 
