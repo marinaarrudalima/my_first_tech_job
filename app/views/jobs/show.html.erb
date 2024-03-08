@@ -1,14 +1,19 @@
-<h1>Details of <%= @job.title %> at <%=@job.company.name %></h1>
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-20">
+      <h1>Details of <%= @job.title %> at <%=@company.name %></h1>
 
-<p><%= @job.title %></p>
-<p><%= @job.location %></p>
-<p>Job Description<%= @job.job_description %></p>
-<p>Soft Skills<%= @job.soft_skills %></p>
-<p>Programming Languages<%= @job.programming_languages %></p>
-<p><%= @job.work_visa %></p>
-<p>Salary<%= @job.salary %></p>
-<p>Benefits<%= @job.benefits %></p>
-<p>Application Deadline<%= @job.application_deadline %></p>
-<p>Date Posted<%= @job.date_posted %></p>
-
-<%= link_to "Apply", job_matches_path(@job), data: {turbo_method: :post, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary success" %>
+      <p><strong><%= @job.title %></p></strong>
+      <p><strong>Location: </strong><%= @job.location %></p>
+      <p><strong>Job Description: </strong><%= @job.job_description %></p>
+      <p><strong>Soft Skills: </strong><%= @job.soft_skills %></p>
+      <p><strong>Programming Languages: </strong><%= @job.programming_languages %></p>
+      <p><strong>Work Visa: </strong><%= @job.work_visa %></p>
+      <p><strong>Salary: </strong><%= @job.salary %></p>
+      <p><strong>Benefits: </strong><%= @job.benefits %></p>
+      <p><strong>Application Deadline:</strong> <%= @job.application_deadline %></p>
+      <p><strong>Date Posted: </strong><%= @job.date_posted %></p>
+    </div>
+    <%= link_to "Apply", job_matches_path(@job), data: {turbo_method: :post, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary success" %>
+  </div>
+</div>
