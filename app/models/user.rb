@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum role: %i[ role_candidate role_company ]
+  enum role: %i[role_candidate role_company]
 
   validates :role, presence: true
 

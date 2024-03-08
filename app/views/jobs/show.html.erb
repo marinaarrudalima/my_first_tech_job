@@ -14,5 +14,6 @@
       <p><strong>Application Deadline:</strong> <%= @job.application_deadline %></p>
       <p><strong>Date Posted: </strong><%= @job.date_posted %></p>
     </div>
+    <%= link_to "Apply", job_matches_path(@job), data: {turbo_method: :post, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary success" %>
   </div>
 </div>
