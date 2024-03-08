@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-15">
+      <div class="formcard">
+      <h2>Edit <b><%= @job.title%></b>'s details </h2><br>
+      <%= simple_form_for @job do |f| %>
+          <p><%= @job.title %></p>
+          <p><%= @job.location %></p>
+          <p><%= @job.description %></p>
+          <p><%= @job.soft_skills %></p>
+          <p><%= @job.programming_languages %></p>
+          <p><%= @job.work_visa %></p>
+          <p><%= @job.salary %></p>
+          <p><%= @job.benefits %></p>
+          <p><%= @job.application_deadline %></p>
+          <p><%= @job.date_posted %></p>
+          <%= f.submit "Edit job", class: "btn btn-secondary success"%>
+         <% end %>
+      </div>
+   </div>
+  </div>
+</div>
