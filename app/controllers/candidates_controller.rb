@@ -7,7 +7,7 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.new(candidate_params)
     @candidate.user = current_user
     if @candidate.save
-      redirect_to candidates_path(:candidate)
+      redirect_to candidate_path(@candidate)
     else
       render :new, status: :unprocessable_entity
     end
