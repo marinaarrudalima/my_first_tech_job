@@ -2,5 +2,5 @@ class Job < ApplicationRecord
   belongs_to :company, dependent: :destroy
   has_many :matches
 
-  validates :title, :job_description, :soft_skills, :programming_languages, :work_visa, :salary, :application_deadline, presence: true
+  validates :title, :job_description, :location, :soft_skills, :programming_languages, :work_visa, :salary, :application_deadline, presence: true
 end
