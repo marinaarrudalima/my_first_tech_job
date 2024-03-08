@@ -5,13 +5,15 @@
 
       <div class="cards-container">
         <% @jobs.each do |job| %>
-          <div class="card-product-infos">
-            <ul>
-              <li><%= job.company.name %></li>
-              <li><%= job.title %></li>
-              <li><%= job.location %></li>
-              <li><%= job.salary %></li>
-            </ul>
+          <%= link_to job_path(job) do %>
+            <div class="card-product-infos">
+              <ul>
+                <li><%= job.company.name %></li>
+                <li><%= job.title %></li>
+                <li><%= job.location %></li>
+                <li><%= job.salary %></li>
+              </ul>
+          <% end %>
           </div>
         <% end %>
       </div>
