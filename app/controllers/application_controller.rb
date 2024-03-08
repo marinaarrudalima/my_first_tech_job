@@ -9,11 +9,12 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
   end
 
-
   def dispatch_user
     return unless current_user && request.get?
+
     path = request.path
     path = new_candidate_path if current_user.role_candidate? && current_user.candidate.blank?
+    path = new_company_path if current_user.role_company? && current_user.company.blank?
 
     redirect_to path unless path.nil? || path == request.path
   end
