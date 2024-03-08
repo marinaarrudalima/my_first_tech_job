@@ -87,6 +87,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_123538) do
     t.bigint "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
     t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 

@@ -6,11 +6,10 @@ Rails.application.routes.draw do
     resources :matches, only: %i[index]
   end
 
-  resources :companies, except: :index do
-    resources :jobs, only: %i[new create]
-  end
+  resources :companies
+  get "/my_jobs", to: "jobs_controller#my_jobs"
 
-  resources :jobs, except: %i[new create] do
+  resources :jobs do
     resources :matches, only: %i[index create]
   end
 

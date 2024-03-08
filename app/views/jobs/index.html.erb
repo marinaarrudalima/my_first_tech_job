@@ -1,0 +1,16 @@
+<div class="container justify-content-start">
+  <h3 class="header mt-3 mb-3"><strong>Jobs Available</strong></h3>
+</div>
+
+<div class="cards-container">
+  <% @jobs.each do |job| %>
+      <div class="card-product-infos">
+      <ul>
+        <li><%= @company.name %></li>
+        <li><%= job.title %></li>
+        <li><%= job.location %></li>
+        <li><%= job.salary %></li>
+      </ul>
+  </div>
+  <% end  %>
+</div>

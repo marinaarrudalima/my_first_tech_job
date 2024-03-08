@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-20">
+      <h4><br>Complete your company's form</h4><br>
+      <div class="formcard">
+      <%= simple_form_for @company do |f| %>
+        <%= f.input :name %>
+        <%= f.input :headquarters %>
+        <%= f.input :industry, collection: ['Technology', 'Finance'], prompt: 'Select an industry from the dropdown' %>
+        <%= f.input :description %>
+        <%= f.input :contact_info %>
+        <%= f.submit "Submit", class: "btn btn-secondary success"%>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
