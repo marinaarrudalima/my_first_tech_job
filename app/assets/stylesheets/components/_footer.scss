@@ -1,9 +1,18 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .footer {
   background-color: #DDDDDD;
   color: #736372;
   width: 100%;
-  left: 0;
-  bottom: 0
+  bottom: 0;
+  border-top-color:#73637231;
+  border-top-style: solid;
+  border-top-width: 5px;
+  margin-top: auto;
 }
 
 .footer-column {
