@@ -1,14 +1,32 @@
 class MatchesController < ApplicationController
-  def my_matches
-    @matches = Match.where(candidate_id: current_user.candidate.id)
+  def my
+    @matches = Match.where(candidate: current_user.candidate)
+  end
+
+  def index
+    @job = current_user.company.jobs.find(params[:job_id])
+    @matches = Match.where(job: @job)
   end
 
   def create
-    @match = Match.new(job_id: params[:job_id], candidate_id: current_user.candidate.id)
-    if @match.save
-      redirect_to my_matches_path
-    else
-      render job_path(@match.job), status: :unprocessable_entity
-    end
+    @job = Job.find(params[:job_id])
+    @match = Match.new
+    @match.candidate = current_user.candidate
+    @match.job = @job
+
+    @match.save!
+    redirect_to my_matches_path
+  end
+
+  def update
+    @match = Match.find(params[:id])
+    @match.update!(match_params)
+    redirect_to job_matches_path(@match.job)
+  end
+
+  private
+
+  def match_params
+    params.require(:match).permit(:status)
   end
 end

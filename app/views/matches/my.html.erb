@@ -4,7 +4,9 @@
   <% @matches.each do |match| %>
       <div class="card-product-infos">
       <ul>
-        <li><%= match.job.company.name %></li>
+        <li>
+          Company: <%= match.job.company.name %> - Job: <%= match.job.title %>
+        </li>
       </ul>
   </div>
   <% end  %>

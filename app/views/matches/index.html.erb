@@ -1,0 +1,20 @@
+<h1>Matches for Job <%= @job.title %></h1>
+
+<div class="cards-container">
+  <% @matches.each do |match| %>
+      <div class="card-product-infos">
+      <ul>
+        <li>
+          Candidate: <%= match.candidate.first_name %>
+
+          <%= simple_form_for match do |f| %>
+            <%= f.input :status, collection: Match.statuses.keys %>
+            <%= f.submit "Change" %>
+          <% end %>
+
+
+        </li>
+      </ul>
+  </div>
+  <% end  %>
+</div>
