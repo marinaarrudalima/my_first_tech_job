@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   end
 
   resources :companies
+
   get "/my_jobs", to: "jobs_controller#my_jobs"
+  get "/my_matches", to: "matches#my_matches"
 
   resources :jobs do
-    resources :matches, only: %i[index create]
+    resources :matches, only: %i[index create] # quem acessa o index é company quem acessa create é candidate
   end
 
   resources :matches, except: %i[index new create]

@@ -1,8 +1,8 @@
-<h1>Details of <%= @job.title %> at <%=@company.name %></h1>
+<h1>Details of <%= @job.title %> at <%=@job.company.name %></h1>
 
 <p><%= @job.title %></p>
 <p><%= @job.location %></p>
-<p>Job Description<%= @job.description %></p>
+<p>Job Description<%= @job.job_description %></p>
 <p>Soft Skills<%= @job.soft_skills %></p>
 <p>Programming Languages<%= @job.programming_languages %></p>
 <p><%= @job.work_visa %></p>
@@ -10,3 +10,5 @@
 <p>Benefits<%= @job.benefits %></p>
 <p>Application Deadline<%= @job.application_deadline %></p>
 <p>Date Posted<%= @job.date_posted %></p>
+
+<%= link_to "Apply", job_matches_path(@job), data: {turbo_method: :post, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary success" %>
