@@ -7,10 +7,8 @@ Rails.application.routes.draw do
   end
 
   resources :companies
-<<<<<<< HEAD
-=======
-  get "/my_jobs", to: "jobs_controller#my_jobs"
->>>>>>> 2cbe2cbbab9ed319f159457215aef185914192f0
+
+  get "/my_jobs", to: "jobs#my_jobs"
 
   resources :jobs do
     resources :matches, only: %i[index create]

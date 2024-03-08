@@ -1,14 +1,19 @@
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-20">
 
-<div class="container justify-content-start">
-  <h3 class="header mt-3 mb-3"><strong>Registered Companies</strong></h3>
-</div>
+      <h3><strong>Registered Companies</strong></h3>
 
-<div class="cards-container">
-  <% @companies.each do |company| %>
-      <div class="card-product-infos">
-      <ul>
-        <li><%= company.name %></li>
-      </ul>
+      <div class="cards-container">
+        <% @companies.each do |company| %>
+          <div class="card-product-infos">
+          <ul>
+          <li><%= company.name %></li>
+          </ul>
+        </div>
+        <% end  %>
+      </div>
+    </div>
   </div>
   <% end %>
 </div>

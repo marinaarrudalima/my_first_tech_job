@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-
   def new
     @job = Job.new
   end
@@ -8,7 +7,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.company = current_user.company
     if @job.save
-      redirect_to companies_path(@company)
+      redirect_to jobs_path(@job)
     else
       render jobs_path, status: :unprocessable_entity
     end
@@ -23,11 +22,11 @@ class JobsController < ApplicationController
   end
 
   def show
-    @job = Job.find(param[:id])
+    @job = Job.find(params[:id])
   end
 
   def edit
-    @job = Job.find(param[:id])
+    @job = Job.find(params[:id])
   end
 
   def update
@@ -41,7 +40,13 @@ class JobsController < ApplicationController
   end
 
   def destroy
-
+    @job = Job.find(params[:id])
+    @job.user = current_user
+    if @job.destroy(job_params)
+      redirect_to job_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
