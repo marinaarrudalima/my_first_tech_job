@@ -1,9 +1,20 @@
 class JobsController < ApplicationController
+
   def new
+    if current_user.role_candidate?
+      redirect_to root_path
+      return
+    end
+
     @job = Job.new
   end
 
   def create
+    if current_user.role_candidate?
+      redirect_to root_path
+      return
+    end
+
     @job = Job.new(job_params)
     @job.company = current_user.company
     if @job.save
@@ -23,7 +34,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    @matches = @job.matches
+    @match = Match.new
   end
 
   def edit
