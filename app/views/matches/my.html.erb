@@ -1,0 +1,13 @@
+<h1>My Matches</h1>
+
+<div class="cards-container">
+  <% @matches.each do |match| %>
+      <div class="card-product-infos">
+      <ul>
+        <li>
+          Company: <%= match.job.company.name %> - Job: <%= match.job.title %>
+        </li>
+      </ul>
+  </div>
+  <% end  %>
+</div>
