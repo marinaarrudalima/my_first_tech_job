@@ -1,0 +1,19 @@
+<div class="formcard">
+      <%= simple_form_for @candidate do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :address %>
+        <%= f.input :birth_date %>
+        <%= f.input :nationality %>
+        <%= f.input :gender %>
+        <%= f.input :photo %>
+        <%= f.input :summary %>
+        <%= f.input :tech_interest %>
+        <%= f.input :tech_languages %>
+        <%= f.input :preferred_companies %>
+        <%= f.input :cv_upload %>
+        <%= f.input :terms_conditions %>
+
+
+        <%= f.submit "Submit", class: "btn btn-secondary success"%>
+      <% end %>
