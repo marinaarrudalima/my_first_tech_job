@@ -10,11 +10,4 @@ class User < ApplicationRecord
 
   validates :role, presence: true
 
-  # after_create :define_a_new_method
-
-  # private
-
-  # def define_a_new_method
-
-  # end
 end
