@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_08_204508) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_10_191956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,8 +50,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_204508) do
     t.string "gender"
     t.string "photo"
     t.string "summary"
-    t.string "tech_interest"
-    t.string "tech_languages"
+    t.text "tech_interest", default: [], array: true
+    t.text "tech_languages", default: [], array: true
     t.string "preferred_companies"
     t.string "cv_upload"
     t.bigint "user_id", null: false
