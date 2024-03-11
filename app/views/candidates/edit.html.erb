@@ -1,26 +1,8 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-20">
+    <div class="form-box">
       <h4><br>You can update your profile</h4><br>
-      <div class="formcard">
-      <%= simple_form_for @candidate do |f| %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :address %>
-        <%= f.input :birth_date %>
-        <%= f.input :nationality %>
-        <%= f.input :gender %>
-        <%= f.input :photo %>
-        <%= f.input :summary %>
-        <%= f.input :tech_interest %>
-        <%= f.input :tech_languages %>
-        <%= f.input :preferred_companies %>
-        <%= f.input :cv_upload %>
-        <%= f.input :terms_conditions %>
-
-
-        <%= f.submit "Update", class: "btn btn-secondary success"%>
-      <% end %>
+        <%= render "form", candidate: @candidate %>
       </div>
     </div>
   </div>

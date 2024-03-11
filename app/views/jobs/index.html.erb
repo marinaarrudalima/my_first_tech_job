@@ -1,22 +1,19 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-20 mt-5 mb-5">
-      <h1><strong>Jobs Available</strong></h1>
+    <div>
+      <h2><strong>Jobs Available</strong></h2>
 
       <div class="cards-container mt-5">
         <% @jobs.each do |job| %>
           <%= link_to job_path(job) do %>
             <div class="card-product-infos">
-              <ul>
-                <li><%= job.company.name %></li>
-                <li><%= job.title %></li>
-                <li><%= job.location %></li>
-                <li><%= job.salary %></li>
-              </ul>
+            <%= image_tag "company_logo" %>
+            <p><%= job.title %> <br>at <strong><%= job.company.name %></strong>
+            <br><%= job.location %>
+            <br>$<%= job.salary %>
+            <br><%= job.job_description %></p>
           <% end %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-</div>

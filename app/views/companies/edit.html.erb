@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-15">
+    <div class="form-box">
       <div class="formcard">
       <h2>Edit <b><%= @company.name%></b>'s details </h2><br>
       <%= simple_form_for @company do |f| %>
@@ -9,7 +9,7 @@
         <%= f.input :industry %>
         <%= f.input :description %>
         <%= f.input :contact_info %>
-        <%= f.submit "Edit ticket", class: "btn btn-secondary success"%>
+        <%= f.submit "Update", class: "btn1"%>
       <% end %>
     </div>
   </div>

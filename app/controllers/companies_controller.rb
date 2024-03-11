@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     @company.user = current_user
     if @company.save
-      redirect_to companies_path
+      redirect_to company_path(@company)
     else
       render :new, status: :unprocessable_entity
     end
@@ -17,6 +17,13 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
   end
+
+  # tinha pensado que, para acessar todos os jobs da company precisariamos de um novo index
+  # e minha dúvida é se esse index ficaria em jobs ou companies
+  # def our
+  #   @jobs = Companies.jobs
+  #   @jobs.all
+  # end
 
   def show
     @company = Company.find(params[:id])
