@@ -24,6 +24,18 @@ class MatchesController < ApplicationController
     redirect_to job_matches_path(@match.job)
   end
 
+  def destroy
+    @match = Match.find(params[:id])
+    if @match.destroy
+      respond_to do |format|
+        format.html { redirect_to my_matches_path }
+      end
+    else
+      render :my
+      # redirect_to my_matches_path
+    end
+  end
+
   private
 
   def match_params

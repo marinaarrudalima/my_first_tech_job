@@ -25,12 +25,17 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all
+      @jobs = Job.all
   end
 
   def my_jobs
-    @jobs = Job.where(company_id: current_user.company.id)
+    if current_user.company
+      @jobs = Job.where(company_id: current_user.company.id)
+    else
+      @jobs = Job.all
+    end
   end
+
 
   def show
     @job = Job.find(params[:id])

@@ -6,7 +6,7 @@
       <%= simple_form_for @company do |f| %>
         <%= f.input :name %>
         <%= f.input :headquarters %>
-        <%= f.input :industry, collection: ['Technology', 'Finance'], prompt: 'Select an industry from the dropdown' %>
+        <%= f.input :industry, collection: ['Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Energy', 'Reatil and e-commerce', 'Real estate and construction', 'Telecommunications', 'Hospitality and Tourism', 'Food and Beverage'], prompt: 'Select an industry from the dropdown' %>
         <%= f.input :description %>
         <%= f.input :contact_info %>
         <%= f.submit "Submit", class: "btn btn-secondary success"%>

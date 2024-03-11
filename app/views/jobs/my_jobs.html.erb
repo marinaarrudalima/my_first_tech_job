@@ -13,6 +13,8 @@
               <li><%= job.salary %></li>
               <%= link_to "Delete listing", job_path(job), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this listing?"} %>
               <%= link_to "Edit listing", edit_job_path(job), data: {turbo_method: :get} %>
+              <%= link_to "See applications", job_matches_path(job), data: {turbo_method: :get} %>
+
             </ul>
           </div>
         <% end %>
