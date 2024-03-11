@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Merriweather:wght@300&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 // banner
 
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 100px 0;
   text-align: center;
   color: white;
 }
 
 .banner h1 {
   margin: 0;
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 60px;
+  font-weight: 300;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: "Titillium Web", sans-serif;
 }
 
 .banner p {
@@ -59,4 +60,10 @@
 
 .partner-item i {
   margin-bottom: 10px;
+}
+
+// icones
+
+.fa-solid {
+  font-size: 32px;
 }
