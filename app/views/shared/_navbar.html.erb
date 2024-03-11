@@ -31,7 +31,7 @@
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if current_user.company != nil  %>
-              <%= link_to "My Jobs", "/my_jobs", class: "dropdown-item" %>
+              <%= link_to "My Jobs", "/jobs", class: "dropdown-item" %>
             <% else %>
               <%= link_to "My Matches", "/my_matches", class: "dropdown-item" %>
             <% end %>
