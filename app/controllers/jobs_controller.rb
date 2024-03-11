@@ -25,7 +25,7 @@ class JobsController < ApplicationController
   end
 
   def index
-      @jobs = Job.all
+    @jobs = Job.all
   end
 
   def my_jobs
