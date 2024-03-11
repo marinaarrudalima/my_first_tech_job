@@ -3,11 +3,8 @@
 <div class="cards-container">
   <% @matches.each do |match| %>
       <div class="card-product-infos">
-      <ul>
-        <li>
-          Company: <%= match.job.company.name %> - Job: <%= match.job.title %>
-        </li>
-      </ul>
+          Company: <span><%= match.job.company.name %> - Job: <%= match.job.title %></span>
+          Status: <span><%= match.job.status %></span>
   </div>
   <% end  %>
 </div>
