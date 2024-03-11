@@ -1,29 +1,21 @@
 <div class="formcard">
+    <div class="formcard">
       <%= simple_form_for @candidate do |f| %>
         <%= f.error_notification %>
-
         <%= f.input :first_name %>
         <%= f.input :last_name %>
         <%= f.input :address %>
-
         <%= f.input :nationality, as: :select, collection: ISO3166::Country.all.map { |c| c.iso_short_name }, include_blank: 'Please Select' %>
-
         <%= f.input :gender, as: :select, collection: ["Female", "Non-binary", "Male",  "Other"], include_blank: true %>
-
         <%= f.input :birth_date, as: :date, start_year: Time.now.year - 100, end_year: Time.now.year - 18, include_blank: true %>
-
-        <%= f.input :photo %>
+        <%= f.input :photo, as: :file %>
         <%= f.input :summary %>
-
         <%= f.input :tech_languages, as: :check_boxes, collection: Candidate::LANGUAGES_OPTIONS, input_html: { multiple: true, name: "candidate[tech_languages][]" } %>
         <%= f.input :tech_interest, as: :check_boxes, collection: Candidate::INTEREST_OPTIONS, input_html: { multiple: true, name: "candidate[tech_interest][]" } %>
-
         <%= f.input :preferred_companies %>
-        <%= f.input :cv_upload %>
-
+        <%= f.input :CV_upload, as: :file %>
         <%= f.input :terms_conditions, as: :boolean %>
-
         <%= f.submit "Submit", class: "btn btn-secondary success"%>
       <% end %>
+  </div>
 </div>
-
