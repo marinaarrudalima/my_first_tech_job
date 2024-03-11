@@ -7,10 +7,10 @@
         <% @jobs.each do |job| %>
           <div class="card-product-infos">
             <ul>
-              <li><%= job.company.name %></li>
-              <li><%= job.title %></li>
-              <li><%= job.location %></li>
-              <li><%= job.salary %></li>
+              <li>Name: <%= job.company.name %></li>
+              <li>Title: <%= job.title %></li>
+              <li>Location: <%= job.location %></li>
+              <li>Salary: <%= job.salary %></li>
               <%= link_to "Delete listing", job_path(job), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this listing?"} %>
               <%= link_to "Edit listing", edit_job_path(job), data: {turbo_method: :get} %>
             </ul>
