@@ -1,1 +1,62 @@
-// Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Merriweather:wght@300&display=swap');
+
+// banner
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  text-align: center;
+  color: white;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner p {
+  font-size: 20px;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+
+// button-home
+
+.btn-banner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 4px;
+  background: #736372;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-banner:hover {
+  background: #584c58;
+}
+
+// texto com os icones
+
+.txt-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.partner-item {
+  text-align: center;
+}
+
+.partner-item i {
+  margin-bottom: 10px;
+}
