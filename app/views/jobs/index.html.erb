@@ -1,8 +1,8 @@
 <div class="container">
-    <div>
-      <h2><strong>Jobs Available</strong></h2>
+  <div>
+    <h2><strong>Jobs Available</strong></h2>
 
-      <div class="cards-container mt-5">
+    <div class="cards-container mt-5">
         <% @jobs.each do |job| %>
           <%= link_to job_path(job) do %>
             <div class="card-product-infos">
@@ -12,8 +12,8 @@
             <br>$<%= job.salary %>
             <br><%= job.job_description %></p>
           <% end %>
-          </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>
