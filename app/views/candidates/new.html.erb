@@ -10,7 +10,7 @@
         <%= f.input :last_name %>
         <%= f.input :address %>
 
-        <%= f.input :nationality, as: :select, collection: ["All Countries"], include_blank: false %>
+        <%= f.input :nationality, as: :select, collection: ISO3166::Country.all.map { |c| c.iso_short_name }, include_blank: 'Please Select' %>
 
         <%= f.input :gender, as: :select, collection: ["Female", "Non-binary", "Male",  "Other"], include_blank: true %>
 
@@ -20,7 +20,7 @@
         <%= f.input :summary %>
 
         <%= f.input :tech_languages, as: :check_boxes, collection: Candidate::LANGUAGES_OPTIONS, input_html: { multiple: true, name: "candidate[tech_languages][]" } %>
-        <%= f.input :tech_languages, as: :check_boxes, collection: Candidate::LANGUAGES_OPTIONS, input_html: { multiple: true, name: "candidate[tech_languages][]" } %>
+        <%= f.input :tech_interest, as: :check_boxes, collection: Candidate::INTEREST_OPTIONS, input_html: { multiple: true, name: "candidate[tech_interest][]" } %>
 
         <%= f.input :preferred_companies %>
         <%= f.input :cv_upload %>

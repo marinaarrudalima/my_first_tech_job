@@ -40,6 +40,10 @@ class CandidatesController < ApplicationController
   private
 
   def candidate_params
-    params.require(:candidate).permit(:first_name, :last_name, :address, :nationality, :gender, :birth_date, :photo, :summary,:tech_interest, :tech_languages, :preferred_companies, :user_id)
+    params[:candidate][:tech_interest].delete_if(&:empty?)
+    params[:candidate][:tech_languages].delete_if(&:empty?)
+    params.require(:candidate).permit(
+      :first_name, :last_name, :address, :nationality, :gender,
+      :birth_date, :photo, :summary, :preferred_companies, :user_id, :tech_interest=>[], :tech_languages=>[])
   end
 end
