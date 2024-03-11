@@ -5,10 +5,10 @@
       <div class="card-product-infos">
       <ul>
         <li>
-          Candidate: <%= match.candidate.first_name %>
-
+          <p>Candidate: <%= match.candidate.first_name %></p>
+          <p>Status: <%= match.status %></p>
           <%= simple_form_for match do |f| %>
-            <%= f.input :status, collection: Match.statuses.keys %>
+            <%= f.input :status, label: false, collection: Match.statuses.keys %>
             <%= f.submit "Change" %>
           <% end %>
 
