@@ -1,30 +1,37 @@
-<div class="container">
-  <h1><%= @candidate.first_name %> <%= @candidate.last_name %>'s Profile</h1>
-  <div class="banner">
+<div class="banner">
+</div>
+
+<div class="container container-profile">
+    <div class="card-header">
+      <img src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' class="rounded-circle shadow-4"
+      style="width: 220px;"/>
+
+      <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
+    </div>
+
+  <div class="content-profile">
+    <div class="card-default card-links">
+      <%= link_to "Your CV", edit_candidate_path,  class: "btn-dark" %>
+      <%= link_to "Edit your profile", edit_candidate_path, class: "btn-dark" %>
+      <%= link_to "Your applications", my_matches_path, class: "btn-dark" %>
+    </div>
+    <div class="card-info-profile">
+      <div class="card-default">
+        <h3>Summary:</h3>
+        <p><%=@candidate.summary %> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis totam maxime a consectetur asperiores, explicabo doloribus, similique voluptatum veniam voluptate iusto soluta aliquam. Repellendus perferendis accusamus, quo soluta quaerat nulla.</p>
+      </div>
+
+      <div class="card-default">
+        <h4>Relevant Information:</h4>
+        <ul>
+          <li>From <%= @candidate.nationality %></li>
+          <li>Gender: <%= @candidate.gender %></li>
+          <li>Interests in: <%= @candidate.tech_interest.join(', ') %></li>
+          <li>Programming languages: <%= @candidate.tech_languages.join(', ') %></li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <img src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' class="rounded-circle shadow-4"
-  style="width: 150px;"/>
-
-  <div class="main-summary">
-  <h3>Summary:</h3>
-  <p><%=@candidate.summary %></p>
-  </div>
-
-  <div class="secondary-info">
-    <h4>Relevant Information:</h4>
-    <ul>
-      <li>From <%= @candidate.nationality %></li>
-      <li>Gender: <%= @candidate.gender %></li>
-      <li>Interests in: <%= @candidate.tech_interest.join(', ') %></li>
-      <li>Programming languages: <%= @candidate.tech_languages.join(', ') %></li>
-    </ul>
-  </div>
-
-  <div class="links">
-    <%= link_to "Your CV", edit_candidate_path,  class: "btn-dark" %>
-    <%= link_to "Edit your profile", edit_candidate_path, class: "btn-dark" %>
-    <%= link_to "Your applications", my_matches_path, class: "btn-dark" %>
-  </div>
 
 </div>
