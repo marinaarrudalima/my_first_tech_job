@@ -98,7 +98,8 @@
   margin-top: auto;
   text-decoration: none;
   justify-content: space-evenly;
-=======
+}
+
 //elementos que estão no profile de candidate (por enquanto)
 .container-profile {
   display: flex;
@@ -111,7 +112,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 110px
+  gap: 110px;
 }
 
 .card-default {

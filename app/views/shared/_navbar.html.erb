@@ -36,7 +36,7 @@
               <%# aqui estão complexo porque ainda não há rotas e lógica da route precisa ser definida %>
               <%# <%= link_to "Registered Jobs", our_jobs_path, class: "dropdown-item" %>
               <%= link_to "Create Job", "/jobs/new", class: "dropdown-item" %>
-              <%= link_to "Edit Profile", edit_company_path, class: "dropdown-item" %>
+              <%= link_to "Edit Profile", edit_company_path(), class: "dropdown-item" %>
             <% else %>
               <%= link_to "My Applications", my_matches_path, class: "dropdown-item" %>
               <%= link_to "Job Opportunities", "/jobs", class: "dropdown-item" %>
