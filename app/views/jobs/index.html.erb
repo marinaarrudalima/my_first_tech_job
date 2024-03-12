@@ -1,19 +1,37 @@
 <div class="container">
-  <div>
-    <h2><strong>Jobs Available</strong></h2>
+  <div class="container justify-content-center">
+    <h1>Search for your first tech job here</h1>
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url:"/jobs", method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control custom-width",
+            placeholder: "Search for a job"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-    <div class="cards-container mt-5">
-        <% @jobs.each do |job| %>
-          <%= link_to job_path(job) do %>
-            <div class="card-product-infos">
-            <%= image_tag "company_logo" %>
-            <p><%= job.title %> <br>at <strong><%= job.company.name %></strong>
+      <h2><strong>Jobs Available</strong></h2>
+
+      <div class="cards-container mt-5">
+        <% unless @jobs.blank? %>
+          <% @jobs.each do |job| %>
+            <%= link_to job_path(job) do %>
+              <div class="card-product-infos">
+                <%= image_tag "company_logo" %>
+            <p>
+            <%= job.title %> <br>at <strong><%= job.company.name %></strong>
             <br><%= job.location %>
             <br>$<%= job.salary %>
-            <br><%= job.job_description %></p>
-          <% end %>
-        </div>
+            <br><%= job.job_description %>
+            </p>
+          </div>
+        <% end %>
       <% end %>
-    </div>
+    <% else %>
+      <p class=message>Sorry! No jobs available for your search</p>
+    <% end %>
   </div>
 </div>
