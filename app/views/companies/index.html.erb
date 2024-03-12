@@ -2,16 +2,19 @@
   <div class="row justify-content-center">
     <div class="col-20">
 
-      <h3><strong>Registered Companies</strong></h3>
+      <div class = "title-companies"><h3><strong>Registered Companies</strong></h3></div>
 
-      <div class="cards-container">
-        <% @companies.each do |company| %>
-          <div class="card-product-infos">
-          <ul>
-          <li><%= company.name %></li>
-          </ul>
-        </div>
-        <% end  %>
+      <div class="cards-container-company">
+          <% @companies.each do |company| %>
+          <div class="card-company">
+            <%= link_to company_path(company) do %>
+              <div class="overlay">
+                <h4><%= company.name %></h4>
+              </div>
+              <%= image_tag "company_logo" %>
+            <% end %>
+          </div>
+          <% end %>
       </div>
     </div>
   </div>
