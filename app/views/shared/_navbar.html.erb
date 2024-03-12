@@ -10,6 +10,8 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+      <%= link_to "Job Opportunities", jobs_path, data: {turbo_method: :delete}, class: "green-icon" %>
+
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "#", class: "green-icon" do %>
