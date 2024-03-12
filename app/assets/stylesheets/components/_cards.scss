@@ -98,4 +98,58 @@
   margin-top: auto;
   text-decoration: none;
   justify-content: space-evenly;
+=======
+//elementos que estão no profile de candidate (por enquanto)
+.container-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 110px
+}
+
+.card-default {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  height: 180px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-default p{
+  max-width: 500px;
+  text-align:left;
+}
+
+.content-profile{
+  display: flex;
+  justify-content: flex-start;
+  gap: 28px;
+}
+
+.card-info-profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px
+}
+
+.card-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-top: 20px;
+  max-width: 500px;
+  height: auto;
 }

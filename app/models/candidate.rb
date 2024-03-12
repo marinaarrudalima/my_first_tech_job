@@ -2,9 +2,10 @@ class Candidate < ApplicationRecord
   belongs_to :user, dependent: :destroy
   has_many :matches
   has_one_attached :photo
-  has_one_attached :CV_upload
+  has_one_attached :cv_upload
 
-  validates :first_name, :last_name, :birth_date, :address, :nationality, :gender, :tech_interest, :tech_languages, presence: true
+  validates :first_name, :last_name, :birth_date, :address,
+            :nationality, :gender, :tech_interest, :tech_languages, :cv_upload, presence: true
   validates :terms_condition, acceptance: true
 
   # Custom validation method, if you want to ensure that tech_interest and tech_languages only contain specific values
