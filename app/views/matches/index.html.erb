@@ -9,7 +9,8 @@
             <div class="job-details">
               <ul>
                 <li>
-                  <p>Candidate: <%= match.candidate.first_name %></p>
+                  <p>
+                  Candidate: <%= link_to match.candidate.first_name, candidate_path(match.candidate) %></p>
                   <p>Status: <%= match.status %></p>
                   <%= simple_form_for match do |f| %>
                     <%= f.input :status, label: false, collection: Match.statuses.keys %>

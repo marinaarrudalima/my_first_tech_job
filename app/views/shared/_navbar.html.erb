@@ -10,7 +10,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-      <%= link_to "Job Opportunities", jobs_path, data: {turbo_method: :delete}, class: "green-icon" %>
+      <%= link_to "Job Opportunities", jobs_path, data: {turbo_method: :get}, class: "green-icon" %>
 
         <% if user_signed_in? %>
           <li class="nav-item active">
@@ -51,7 +51,6 @@
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
-        <% end %>
         <% end %>
       </ul>
     </div>
