@@ -33,8 +33,6 @@
             <% if current_user.company != nil  %>
               <%= link_to "My Jobs", "/jobs/my_jobs", class: "dropdown-item" %>
               <%= link_to "My Matches", "/job_matches", class: "dropdown-item" %>
-              <%# aqui estão complexo porque ainda não há rotas e lógica da route precisa ser definida %>
-              <%# <%= link_to "Registered Jobs", our_jobs_path, class: "dropdown-item" %>
               <%= link_to "Create Job", "/jobs/new", class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_company_path(current_user), class: "dropdown-item" %>
             <% else %>

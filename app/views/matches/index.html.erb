@@ -1,20 +1,26 @@
-<h1>Matches for Job <%= @job.title %></h1>
+<% if current_user.company %>
+  <div class="container">
+    <h1>Matches for Job <%= @job.title %></h1>
 
-<div class="cards-container">
-  <% @matches.each do |match| %>
-      <div class="card-product-infos">
-      <ul>
-        <li>
-          <p>Candidate: <%= match.candidate.first_name %></p>
-          <p>Status: <%= match.status %></p>
-          <%= simple_form_for match do |f| %>
-            <%= f.input :status, label: false, collection: Match.statuses.keys %>
-            <%= f.submit "Change" %>
-          <% end %>
-
-
-        </li>
-      </ul>
+    <div class="card-matches-container">
+      <% @matches.each do |match| %>
+        <div class="card-match">
+          <div class="card-match-info">
+            <div class="job-details">
+              <ul>
+                <li>
+                  <p>Candidate: <%= match.candidate.first_name %></p>
+                  <p>Status: <%= match.status %></p>
+                  <%= simple_form_for match do |f| %>
+                    <%= f.input :status, label: false, collection: Match.statuses.keys %>
+                    <%= f.submit "Change" %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <% end  %>
-</div>
+<% end %>
