@@ -9,3 +9,20 @@
 .btn1:hover {
   background-color: #7363726a;
 }
+
+.btn-dark {
+  display: flex;
+  
+  padding: 10px 20px;
+  background-color: #7363723b;
+  color: #736372;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease
+}
+
+.btn-dark:hover {
+  background-color: #7363726a
+}

@@ -18,6 +18,7 @@ class CandidatesController < ApplicationController
   end
 
   def edit
+    @candidate = current_user.candidate
     @candidate = Candidate.find(params[:id])
   end
 
@@ -44,6 +45,6 @@ class CandidatesController < ApplicationController
     params[:candidate][:tech_languages].delete_if(&:empty?)
     params.require(:candidate).permit(
       :first_name, :last_name, :address, :nationality, :gender,
-      :birth_date, :photo, :summary, :preferred_companies, :user_id, :tech_interest=>[], :tech_languages=>[])
+      :birth_date, :photo, :summary, :preferred_companies, :user_id, :cv_upload, :tech_interest=>[], :tech_languages=>[])
   end
 end

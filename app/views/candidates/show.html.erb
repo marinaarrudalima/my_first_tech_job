@@ -1,4 +1,30 @@
-<h1><%= @candidate.first_name %> <%= @candidate.last_name %>'s Profile</h1>
+<div class="container">
+  <h1><%= @candidate.first_name %> <%= @candidate.last_name %>'s Profile</h1>
+  <div class="banner">
+  </div>
 
-<%= link_to "Edit your profile", edit_candidate_path, class: "btn btn-secondary success" %>
-<%= link_to "Your applications", my_matches_path, class: "btn btn-secondary success" %>
+  <img src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' class="rounded-circle shadow-4"
+  style="width: 150px;"/>
+
+  <div class="main-summary">
+  <h3>Summary:</h3>
+  <p><%=@candidate.summary %></p>
+  </div>
+
+  <div class="secondary-info">
+    <h4>Relevant Information:</h4>
+    <ul>
+      <li>From <%= @candidate.nationality %></li>
+      <li>Gender: <%= @candidate.gender %></li>
+      <li>Interests in: <%= @candidate.tech_interest.join(', ') %></li>
+      <li>Programming languages: <%= @candidate.tech_languages.join(', ') %></li>
+    </ul>
+  </div>
+
+  <div class="links">
+    <%= link_to "Your CV", edit_candidate_path,  class: "btn-dark" %>
+    <%= link_to "Edit your profile", edit_candidate_path, class: "btn-dark" %>
+    <%= link_to "Your applications", my_matches_path, class: "btn-dark" %>
+  </div>
+
+</div>
