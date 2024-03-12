@@ -2,16 +2,16 @@
   <div class="containerfooter">
     <div class="footer-column">
       <h5>USEFUL LINKS</h5><hr>
-      <p>Careers
-      <br>Hire
-      <br>Become a Candidate</p>
+      <p><%= link_to "Careers", "/" %>
+      <br><%= link_to "Hire", "/" %>
+      <br><%= link_to "Become a Candidate", "/" %></p>
     </div>
 
     <div class="footer-column">
       <h5>POLICY</h5><hr>
-      <p>Community Guidelines
-      <br>Privacy Policy
-      <br>Terms of Service</p>
+      <p><%= link_to "Community Guidelines", "/" %>
+      <br><%= link_to "Privacy Policy", "/" %>
+      <br><%= link_to "Terms of Service", "/" %></p>
     </div>
 
     <div class="footer-column">
@@ -19,7 +19,12 @@
       <p>Rua Jericó, 193. São Paulo - SP.
       <br>contact@myfirsttechjob.com
       <br>(11) 3020-1020<br>
-      <i class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-facebook"></i></p>
+      <%= link_to "/" do %>
+        <i class="fa-brands fa-linkedin"></i>
+      <% end %>
+      <%= link_to "/" do %>
+        <i class="fa-brands fa-facebook"></i></p>
+      <% end %>
     </div>
   </div>
 </div>
