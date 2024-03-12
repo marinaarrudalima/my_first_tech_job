@@ -1,17 +1,29 @@
+.banner-container {
+  background-color: #889889;
+}
+
 .card-container {
   display: flex;
   justify-content: space-between;
-  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
 }
 
 .card-job-index {
   flex: 1;
-  background-color: #9b9b9b;
+  background-color: #889889;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.card-job-index p {
-  margin: 0;
+.card-job-index h5 {
+  margin-top: 0;
+}
+
+
+
+.card-job-index li {
+  margin-bottom: 10px;
 }
