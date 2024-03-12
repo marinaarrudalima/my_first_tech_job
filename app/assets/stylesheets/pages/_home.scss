@@ -5,7 +5,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
+  padding: 90px 0;
   text-align: center;
   color: white;
 }
@@ -16,13 +16,6 @@
   font-weight: 300;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-family: "Titillium Web", sans-serif;
-}
-
-.banner p {
-  font-size: 20px;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
 }
 
 
@@ -38,7 +31,7 @@
   border-radius: 4px;
   background: #736372;
   transition: 0.3s ease;
-  font-weight: bold;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .btn-banner:hover {
@@ -52,6 +45,11 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
+
+}
+
+.txt-icons h3 {
+  font-family: "Titillium Web", sans-serif;
 }
 
 .partner-item {
@@ -66,4 +64,58 @@
 
 .fa-solid {
   font-size: 32px;
+}
+
+// quem somos
+
+.about h3 {
+  font-family: "Titillium Web", sans-serif;
+}
+
+
+// banner-bottom
+
+.banner-container {
+  background-color: #9b9b9b;
+  text-align: center;
+  padding: 50px;
+  bottom: 0;
+  width: 100%;
+}
+
+.banner-text {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.banner-bottom {
+  font-size: 18px;
+  margin: 0;
+}
+
+.cta-button {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  background-color: #736372;
+  border-style: solid;
+  border-width: 5px 5px 5px 5px;
+  border-color: #FFFFFF;
+  border-radius: 0px 0px 0px 0px;
+  padding: 20px 40px 20px 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #584c58;
 }
