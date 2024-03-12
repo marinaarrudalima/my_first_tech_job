@@ -1,27 +1,32 @@
-<div class="container">
-  <h2><strong>My Jobs</strong></h2>
-  <div class="cards-container">
-    <% @jobs.each do |job| %>
-      <%= link_to job_path(job) do %>
-        <div class="card-product-infos">
-          <%= image_tag "company_logo" %>
-          <p>
-            <%= job.title %> <br>at <strong><%= job.company.name %></strong>
-            <br><%= job.location %>
-            <br>$<%= job.salary %>
-            <br><%= job.job_description %>
-          </p>
-          <div class="card-product-flex">
-            <%= link_to job_path(job), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this listing?"} do %>
-              <i class="fa-solid fa-trash"></i>
-            <% end %>
-            <%= link_to edit_job_path(job), data: {turbo_method: :get} do %>
-              <i class="fa-solid fa-pen-to-square"></i>
-            <% end %>
-            <%= link_to "See applications", job_matches_path(job), data: {turbo_method: :get} %>
-          </div>
+<% if current_user.company %>
+  <div class="container">
+    <h2><strong>My Jobs</strong></h2>
+    <div class="cards-container">
+      <% @jobs = Job.where(company_id: current_user.company.id) %>
+      <% @jobs.each do |job| %>
+        <%= link_to job_path(job) do %>
+          <div class="card-product-infos">
+            <%= image_tag "company_logo" %>
+            <p>
+              <%= job.title %> <br>at <strong><%= job.company.name %></strong>
+              <br><%= job.location %>
+              <br>$<%= job.salary %>
+              <br><%= job.job_description %>
+            </p>
+            <div class="card-product-flex">
+              <%= link_to job_path(job), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this listing?"} do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+              <%= link_to edit_job_path(job), data: {turbo_method: :get} do %>
+                <i class="fa-solid fa-pen-to-square"></i>
+              <% end %>
+              <%= link_to "See applications", job_matches_path(job), data: {turbo_method: :get} %>
+            </div>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
+<% else %>
+  Error. Page not found.
+<% end %>
