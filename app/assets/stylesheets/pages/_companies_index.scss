@@ -45,6 +45,12 @@
   border-radius: 8px;
 }
 
+.card-company:hover {
+  transition: transform 0.2s;
+  transform: scale(1.02);
+  box-shadow: 1px 1px 3px #7363726a;
+}
+
 .card-company:hover .overlay {
   opacity: 1;
   border-radius: 8px;
