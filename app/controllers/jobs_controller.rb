@@ -28,6 +28,14 @@ class JobsController < ApplicationController
     @jobs = Job.all
   end
 
+  def search
+    @jobs = Job.where(status: 0).order(created_at: :desc)
+    if params[:query] && params[:query].strip != ""
+      @jobs = Job.where(status: 0).search_by_company(params[:query])
+    end
+  end
+
+
   def my_jobs
     if current_user.company
       @jobs = Job.where(company_id: current_user.company.id)
