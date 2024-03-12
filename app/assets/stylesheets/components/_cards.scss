@@ -64,3 +64,38 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
+.card-matches-container {
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-match {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-width: 500px;
+}
+
+.card-match-info {
+  display: flex;
+}
+
+.company-logo {
+  width: 100px;
+  height: auto;
+}
+
+.job-details {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.card-match-actions {
+  margin-top: auto;
+  text-decoration: none;
+  justify-content: space-evenly;
+}
