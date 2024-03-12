@@ -1,7 +1,11 @@
 <div class="profile-container">
   <div class="profile-banner">
     <div class="name-photo">
-    <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-profile" %>
+    <% if @candidate.photo.blank? %>
+      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-profile" %>
+    <% else %>
+      <%= cl_image_tag @candidate.photo.key, gravity: :face, class: "avatar-profile"%>
+    <% end %>
     <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
     </div>
   </div>
@@ -34,10 +38,11 @@
       </div>
       <div class ="column-card">
         <strong>Currículo</strong><br><br>
-        PDF aqui
+        <%= link_to 'Check your CV', rails_blob_url(@candidate.cv_upload, disposition: "attachment"), target: "_blank", class: "btn-dark" %>
       </div>
     </div>
   </div>
 </div>
 <%# <%= link_to "Edit your profile", edit_candidate_path, class: "btn btn-primary" %>
 <%# <%= link_to "Your applications", my_matches_path, class: "btn btn-primary" %>
+
