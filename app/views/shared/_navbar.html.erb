@@ -10,8 +10,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-      <%= link_to "Job Opportunities", jobs_path, class: "green-icon" %>
-
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "#", class: "green-icon" do %>
@@ -34,12 +32,12 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if current_user.company != nil  %>
               <%= link_to "My Jobs", "/jobs/my_jobs", class: "dropdown-item" %>
-              <%= link_to "Company's Profile", company_path(current_user), class: "dropdown-item" %>
+              <%= link_to "My Matches", "/job_matches", class: "dropdown-item" %>
               <%= link_to "Create Job", "/jobs/new", class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_company_path(current_user), class: "dropdown-item" %>
             <% else %>
               <%= link_to "My Applications", my_matches_path, class: "dropdown-item" %>
-              <%= link_to "My Profile", candidate_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Job Opportunities", "/jobs", class: "dropdown-item" %>
               <%= link_to "Companies", "/companies", class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_candidate_path(current_user), class: "dropdown-item" %>
             <% end %>
