@@ -5,7 +5,6 @@ class JobsController < ApplicationController
       redirect_to root_path
       return
     end
-
     @job = Job.new
   end
 
@@ -14,7 +13,6 @@ class JobsController < ApplicationController
       redirect_to root_path
       return
     end
-
     @job = Job.new(job_params)
     @job.company = current_user.company
     if @job.save
@@ -24,25 +22,24 @@ class JobsController < ApplicationController
     end
   end
 
-  def index
-    @jobs = Job.all
-  end
+  # def index
+  #   @jobs = Job.all
+  #   if params[:query].present? || params[:company.name].present? || params[:programming_language].present? || params[:title].present?
+  #     @jobs = @jobs.search(params[:query])
+  #       .includes(:title, :company.name, :programming_languages)
+  #       .where("companies.name ILIKE ?", "%#{params[:company]}%")
+  #       .where("programming_languages.name ILIKE ?", "%#{params[:programming_language]}%")
+  #   else
+  #     @jobs = Job.all.includes(:company.name, :programming_languages, :title)
+  #   end
+  # end
 
-  def search
-    @jobs = Job.where(status: 0).order(created_at: :desc)
-    if params[:query] && params[:query].strip != ""
-      @jobs = Job.where(status: 0).search_by_company(params[:query])
-    end
-  end
-
-
-  def my_jobs
-    if current_user.company
-      @jobs = Job.where(company_id: current_user.company.id)
-    else
-      @jobs = Job.all
-    end
-  end
+  # def search
+  #   @jobs = Job.where(status: 0).order(created_at: :desc)
+  #     if params[:query] && params[:query].strip != ""
+  #       @jobs = Job.where(status: 0).search_by_company(params[:query])
+  #     end
+  # end
 
   def show
     @job = Job.find(params[:id])

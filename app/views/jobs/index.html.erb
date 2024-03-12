@@ -3,7 +3,7 @@
     <h1>Search for your first tech job here</h1>
     <div class="row justify-content-center">
       <div class="col-sm-8 my-3">
-        <%= form_with url: /jobs, method: :get, class: "d-flex" do %>
+        <%= form_with url:"/jobs", method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control custom-width",
@@ -16,7 +16,7 @@
       <h2><strong>Jobs Available</strong></h2>
 
       <div class="cards-container mt-5">
-        <% if @jobs.any? %>
+        <% unless @jobs.blank? %>
           <% @jobs.each do |job| %>
             <%= link_to job_path(job) do %>
               <div class="card-product-infos">
@@ -31,7 +31,7 @@
         <% end %>
       <% end %>
     <% else %>
-      <p class=message>Sorry! No jobs available for your search &#x1F972;</p>
+      <p class=message>Sorry! No jobs available for your search</p>
     <% end %>
   </div>
-  </div>
+</div>
