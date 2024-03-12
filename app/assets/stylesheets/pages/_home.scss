@@ -23,15 +23,22 @@
 
 .btn-banner {
   display: inline-flex;
+  font-family: "Titillium Web", sans-serif;
+  line-height: 1.6em;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  background-color: #736372;
+  border-style: solid;
+  border-width: 3px 3px 3px 3px;
+  border-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 15px 30px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 4px;
-  background: #736372;
-  transition: 0.3s ease;
-  font-family: "Titillium Web", sans-serif;
 }
 
 .btn-banner:hover {
@@ -106,15 +113,16 @@
   color: #FFFFFF;
   background-color: #736372;
   border-style: solid;
-  border-width: 5px 5px 5px 5px;
+  border-width: 3px 3px 3px 3px;
   border-color: #FFFFFF;
-  border-radius: 0px 0px 0px 0px;
-  padding: 20px 40px 20px 40px;
+  border-radius: 4px;
+  padding: 15px 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 }
+
 
 .cta-button:hover {
   background-color: #584c58;
