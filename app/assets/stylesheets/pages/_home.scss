@@ -1,27 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Merriweather:wght@300&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 // banner
 
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 90px 0;
   text-align: center;
   color: white;
 }
 
 .banner h1 {
   margin: 0;
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 60px;
+  font-weight: 300;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.banner p {
-  font-size: 20px;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
+  font-family: "Titillium Web", sans-serif;
 }
 
 
@@ -37,7 +31,7 @@
   border-radius: 4px;
   background: #736372;
   transition: 0.3s ease;
-  font-weight: bold;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .btn-banner:hover {
@@ -51,6 +45,11 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
+
+}
+
+.txt-icons h3 {
+  font-family: "Titillium Web", sans-serif;
 }
 
 .partner-item {
@@ -59,4 +58,63 @@
 
 .partner-item i {
   margin-bottom: 10px;
+  font-size: 32px;
+}
+
+// quem somos
+
+.about h3 {
+  font-family: "Titillium Web", sans-serif;
+}
+
+
+// banner-bottom
+
+.banner-container {
+  background-color: #9b9b9b;
+  text-align: center;
+  padding: 50px;
+  bottom: 0;
+  width: 100%;
+}
+
+.banner-text {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.banner-bottom {
+  font-size: 18px;
+  margin: 0;
+}
+
+.cta-button {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  background-color: #736372;
+  border-style: solid;
+  border-width: 5px 5px 5px 5px;
+  border-color: #FFFFFF;
+  border-radius: 0px 0px 0px 0px;
+  padding: 20px 40px 20px 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+
+}
+
+.cta-button:hover {
+  background-color: #584c58;
+  transition: transform 0.2s;
+  transform: scale(1.02);
 }

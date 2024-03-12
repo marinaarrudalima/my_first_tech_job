@@ -1,4 +1,48 @@
-<h1><%= @candidate.first_name %> <%= @candidate.last_name %>'s Profile</h1>
+<div class="profile-container">
+  <div class="profile-banner">
+    <div class="name-photo">
+    <% if @candidate.photo.blank? %>
+      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-profile" %>
+    <% else %>
+      <%= cl_image_tag @candidate.photo.key, gravity: :face, class: "avatar-profile"%>
+    <% end %>
+    <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
+    </div>
+  </div>
 
-<%= link_to "Edit your profile", edit_candidate_path, class: "btn btn-secondary success" %>
-<%= link_to "Your applications", my_matches_path, class: "btn btn-secondary success" %>
+  <div class="profile-body">
+    <div class="body-column">
+    <div class="column-intro">
+      <h4> &lt;/ &gt; Minhas Habilidades</h4>
+    </div>
+      <div class="column-card">
+        Looking for opportunities in the following areas:<br>
+        <ul>
+        <% @candidate.tech_interest.each do |i|%>
+          <br><strong><%= i %> </strong>
+        <% end %>
+        </ul>
+      </div>
+      <div class ="column-card">
+        Proficient in the following programming languages:<br>
+        <ul>
+        <% @candidate.tech_languages.each do |i| %>
+          <br><strong><%= i %></strong>
+        <% end %>
+      </div>
+    </div>
+    <div class="body-column">
+      <div class ="column-card">
+        <strong>Sua Bio</strong><br><br>
+        Descrição
+      </div>
+      <div class ="column-card">
+        <strong>Currículo</strong><br><br>
+        <%= link_to 'Check your CV', rails_blob_url(@candidate.cv_upload, disposition: "attachment"), target: "_blank", class: "btn-dark" %>
+      </div>
+    </div>
+  </div>
+</div>
+<%# <%= link_to "Edit your profile", edit_candidate_path, class: "btn btn-primary" %>
+<%# <%= link_to "Your applications", my_matches_path, class: "btn btn-primary" %>
+

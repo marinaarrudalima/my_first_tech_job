@@ -55,6 +55,7 @@ gem "sassc-rails"
 gem "pundit"
 gem "cloudinary"
 gem "countries"
+gem "cloudinary"
 
 group :development, :test do
   gem "dotenv-rails"
