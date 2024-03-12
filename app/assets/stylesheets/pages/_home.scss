@@ -58,11 +58,6 @@
 
 .partner-item i {
   margin-bottom: 10px;
-}
-
-// icones
-
-.fa-solid {
   font-size: 32px;
 }
 
@@ -114,8 +109,12 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  transition: 0.3s ease;
+
 }
 
 .cta-button:hover {
   background-color: #584c58;
+  transition: transform 0.2s;
+  transform: scale(1.02);
 }
