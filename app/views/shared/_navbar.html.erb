@@ -32,7 +32,6 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if current_user.company != nil  %>
               <%= link_to "My Jobs", "/jobs/my_jobs", class: "dropdown-item" %>
-              <%= link_to "My Matches", "/job_matches", class: "dropdown-item" %>
               <%= link_to "Create Job", "/jobs/new", class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_company_path(current_user), class: "dropdown-item" %>
             <% else %>
