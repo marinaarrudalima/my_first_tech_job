@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-
   def new
     if current_user.role_candidate?
       redirect_to root_path

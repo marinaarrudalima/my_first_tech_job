@@ -10,22 +10,24 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <%= link_to "Jobs Opportunities", jobs_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Companies On", companies_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Search", "/", class: "nav-link"%>
         <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "#", class: "green-icon" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#", class: "green-icon" do %>
+            <i class="fa-regular fa-user"></i>
+          <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#", class: "green-icon" do %>
+            <i class="fa-solid fa-house"></i>
+          <% end %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%# <% unless current_user.candidate.photo.attached? %> %>
-              <%# <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar", alt: "dropdown menu" %> %> %>
-            <%# <% else %>
-              <%# <%= cl_image_tag current_user.candidate.photo.key, gravity: :face, class: "avatar", alt: "dropdown menu"%> %> %>
-            <% end %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if current_user.company != nil  %>
@@ -33,12 +35,11 @@
               <%= link_to "My Matches", "/job_matches", class: "dropdown-item" %>
               <%= link_to "Create Job", "/jobs/new", class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_company_path(current_user), class: "dropdown-item" %>
-            <% elsif current_user.candidate != nil %>
-              <%= link_to "My Applications", my_matches_path, class: "dropdown-item" %>
-              <%= link_to "My Profile", candidate_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Edit Profile", edit_candidate_path(current_user), class: "dropdown-item" %>
             <% else %>
-            <%= link_to "My Applications", my_matches_path, class: "dropdown-item" %>
+              <%= link_to "My Applications", my_matches_path, class: "dropdown-item" %>
+              <%= link_to "Job Opportunities", "/jobs", class: "dropdown-item" %>
+              <%= link_to "Companies", "/companies", class: "dropdown-item" %>
+              <%= link_to "Edit Profile", edit_candidate_path(current_user), class: "dropdown-item" %>
             <% end %>
       </ul>
     </div>
