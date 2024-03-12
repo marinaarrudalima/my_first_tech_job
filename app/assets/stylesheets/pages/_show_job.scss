@@ -1,0 +1,17 @@
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-job-index {
+  flex: 1;
+  background-color: #9b9b9b;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-job-index p {
+  margin: 0;
+}
