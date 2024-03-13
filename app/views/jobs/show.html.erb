@@ -1,54 +1,52 @@
 <div class="container mt-5 mb-5">
-  <div class="row justify-content-center">
-    <div class="col-20">
-      <div class="banner-container">
-        <p class="banner-text"><%= @job.title %></p>
-      </div>
-      <p class="description mt-5"><strong>Job Description:</strong> <%= @job.job_description %></p>
-
-      <div class="card-container mt-5">
-        <div class="card-job-index">
-          <h5 class="card-title mb-3"><strong>City:</strong></h5>
-          <ul>
-            <li>
-              <p><%= @job.location %></p>
-            </li>
-          </ul>
-        </div>
+  <div>
+    <p class="banner-text"><%= @job.title %></p>
+    <p class="banner-text-small">at <%= @job.company.name %></p>
+  </div>
+  <div>
+    <p class="description mt-5"><strong>Job Description:</strong> <%= @job.job_description %></p>
+  </div>
 
 
-        <div class="card-job-index">
-          <h5 class="card-title mb-3"><strong>What you will learn:</strong></h5>
-          <ul>
-            <li>
-              <p><%= @job.soft_skills %></p>
-            </li>
-            <li>
-              <p><strong>Programming Languages:</strong> <%= @job.programming_languages %></p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="card-job-index">
-          <h5 class="card-title mb-3"><strong>Benefits:</strong></h5>
-          <ul>
-            <li><p>Work Visa: <%= @job.work_visa %></p></li>
-            <li><p><%= @job.benefits %></p></li>
-            <li><p><%= @job.salary %></p></li>
-          </ul>
+  <div class="container-card d-flex justify-content-center ">
+    <div class="card-job">
+      <div class="box-job">
+        <div class="content-job">
+          <h3 class="title-job mb-3"><strong>City:</strong></h3>
+          <p><%= @job.location %></p></li>
         </div>
       </div>
-
-      <p><strong>Application Deadline:</strong> <%= @job.application_deadline %></p>
-      <p><strong>Date Posted:</strong> <%= @job.date_posted %></p>
     </div>
 
-    <% if current_user.role_candidate? && current_user.candidate.matches.where(job: @job).count.zero? %>
-      <%= simple_form_for [@job, @match] do |f| %>
-        <div class="d-grid">
-          <%= f.submit "Apply", class: "btn btn-secondary" %>
+
+    <div class="card-job">
+      <div class="box-job">
+        <div class="content-job">
+          <h3 class="title-job mb-3"><strong>Programming Languages:</strong></h3>
+          <p><%= @job.programming_languages %></p>
         </div>
-      <% end %>
-    <% end %>
+      </div>
+    </div>
+
+    <div class="card-job">
+      <div class="box-job">
+        <div class="content-job">
+          <h3 class="title-job mb-3"><strong>Benefits:</strong></h3>
+          <p>Work Visa: <%= @job.work_visa %></p>
+          <p><%= @job.benefits %></p>
+          <p><%= @job.salary %></p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <% if current_user.role_candidate? && current_user.candidate.matches.where(job: @job).count.zero? %>
+    <%= simple_form_for [@job, @match] do |f| %>
+      <div class="container-btn">
+        <div class="row justify-content-center">
+          <%= f.submit "APPLY FOR THIS JOB", class: "btn-apply justify-content-center col-md-3" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
