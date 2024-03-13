@@ -24,9 +24,9 @@ class JobsController < ApplicationController
   end
 
 
-#   def index
-#     @jobs = Job.all
-#     @jobs = Job.search_by_title_programming_languagues_companyname(params[:query]) if params[:query].present?
+  def index
+    @jobs = Job.all
+    # @jobs = Job.search_by_title_programming_languagues_companyname(params[:query]) if params[:query].present?
 #     if current_user.present? && current_user.role_candidate?
 # #AI
 #     client = OpenAI::Client.new
@@ -37,7 +37,7 @@ class JobsController < ApplicationController
 #     @content = chaptgpt_response["choices"][0]["message"]["content"]
 #   end
 #     end
-#   end
+  end
 
   def show
     @job = Job.find(params[:id])
@@ -70,8 +70,8 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params[:jobs][:tech_interests].delete_if(&:empty?)
-    params[:jobs][:programming_languages].delete_if(&:empty?)
+    params[:job][:tech_interests].delete_if(&:empty?)
+    params[:job][:programming_languages].delete_if(&:empty?)
     params.require(:job).permit(:title, :job_description, :soft_skills, :work_visa, :salary, :benefits, :application_deadline, :date_posted, :location, :tech_interests=>[], :programming_languages=>[])
   end
 end
