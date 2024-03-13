@@ -1,6 +1,6 @@
 <% if current_user.company %>
   <div class="container">
-    <h1>Matches for Job <%= @job.title %></h1>
+    <h2><strong>Matches for Job <%= @job.title %></h2></strong>
 
     <div class="card-matches-container">
       <% @matches.each do |match| %>
