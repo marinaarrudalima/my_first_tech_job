@@ -1,9 +1,12 @@
 <div class="container">
  <h2><strong>Jobs Available</strong></h2>
+ <h6>Here at my.First.Tech.Job we want to ensure that starting out your tech career is as smooth of an experience
+ as possible. <br>Our search system helps you find the entry-level job that perfectly aligns with your skills,
+ interests and location.</h6>
   <div class="container justify-content-center">
     <div class="row justify-content-center">
       <div class="col">
-        <%= form_with url:"/jobs", method: :get, class: "search" do %>
+        <%= form_with url:jobs_path, method: :get, class: "search" do %>
         <i class="fa-solid fa-magnifying-glass"></i>
           <%= text_field_tag :query,
             params[:query],
@@ -14,12 +17,12 @@
     </div>
   </div>
 
-      <div class="cards-container mt-5">
+      <div class="cards-container">
         <% unless @jobs.blank? %>
           <% @jobs.each do |job| %>
             <%= link_to job_path(job) do %>
               <div class="card-product-infos">
-                <%= image_tag "company_logo" %>
+                <%= cl_image_tag job.company.logo.key, crop: :fill%>
             <p>
             <%= job.title %> <br>at <strong><%= job.company.name %></strong>
             <br><%= job.location %>

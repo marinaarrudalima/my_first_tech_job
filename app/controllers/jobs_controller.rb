@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def new
     if current_user.role_candidate?
       redirect_to root_path
@@ -21,18 +23,21 @@ class JobsController < ApplicationController
     end
   end
 
+
   def index
     @jobs = Job.all
     @jobs = Job.search_by_title_programming_languagues_companyname(params[:query]) if params[:query].present?
-
+    if current_user.present? && current_user.role_candidate?
+#AI
+    client = OpenAI::Client.new
+    chaptgpt_response = client.chat(parameters: {
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: "Give me a simple recipe for #{@recipe.name} with the ingredients #{@recipe.ingredients}. Give me only the text of the recipe, without any of your own answer like 'Here is a simple recipe'."}]
+    })
+    @content = chaptgpt_response["choices"][0]["message"]["content"]
   end
-
-  # def search
-  #   @jobs = Job.where(status: 0).order(created_at: :desc)
-  #     if params[:query] && params[:query].strip != ""
-  #       @jobs = Job.where(status: 0).search_by_company(params[:query])
-  #     end
-  # end
+    end
+  end
 
   def show
     @job = Job.find(params[:id])
