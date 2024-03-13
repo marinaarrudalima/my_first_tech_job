@@ -1,11 +1,21 @@
 <div class="container mt-5 mb-5">
-  <div>
-    <p class="banner-text"><%= @job.title %></p>
-    <p class="banner-text-small">at <%= @job.company.name %></p>
-  </div>
-  <div>
-    <p class="description mt-5"><strong>Job Description:</strong> <%= @job.job_description %></p>
-  </div>
+  <div class="row justify-content-center">
+    <div class="col-20">
+      <div class="banner-container">
+        <p class="banner-text"><%= @job.title %></p>
+        <div><p><%= @content %></p></div>
+      </div>
+      <p class="description mt-5"><strong>Job Description:</strong> <%= @job.job_description %></p>
+
+      <div class="card-container mt-5">
+        <div class="card-job-index">
+          <h5 class="card-title mb-3"><strong>City:</strong></h5>
+          <ul>
+            <li>
+              <p><%= @job.location %></p>
+            </li>
+          </ul>
+        </div>
 
 
   <div class="container-card d-flex justify-content-center ">
