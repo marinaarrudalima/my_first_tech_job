@@ -10,23 +10,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-      <%= link_to "Job Opportunities", jobs_path, class: "green-icon" %>
+        <li class="nav-item active">
+          <%= link_to "Job Opportunities", jobs_path, class: "navbar-btn" %>
+        </li>
+        <li>
+          <%= link_to "All Companies", companies_path, class: "navbar-btn" %>
+        </li>
 
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "#", class: "green-icon" do %>
-            <i class="fa-solid fa-magnifying-glass"></i>
-          <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "#", class: "green-icon" do %>
-            <i class="fa-regular fa-user"></i>
-          <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "#", class: "green-icon" do %>
-            <i class="fa-solid fa-house"></i>
-          <% end %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar", alt: "dropdown menu" %>
