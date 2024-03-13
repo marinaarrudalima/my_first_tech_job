@@ -22,7 +22,6 @@
           <% @jobs.each do |job| %>
             <%= link_to job_path(job) do %>
               <div class="card-product-infos">
-              <p><%= @content %></p>
                 <%= cl_image_tag job.company.logo.key, crop: :fill%>
             <p>
             <%= job.title %> <br>at <strong><%= job.company.name %></strong>
@@ -38,3 +37,8 @@
     <% end %>
   </div>
 </div>
+
+
+
+
+
