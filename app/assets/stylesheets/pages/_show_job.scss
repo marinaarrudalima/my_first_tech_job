@@ -1,29 +1,117 @@
-.banner-container {
-  background-color: #889889;
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Merriweather:wght@300&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+//BANNER
+
+
+.banner-text {
+  color: #141414;
 }
 
-.card-container {
+.banner-text-small {
+  color: #141414;
+  font-size: 1.8em;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+
+// CARDS
+.container-card {
   display: flex;
-  justify-content: space-between;
-
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  padding: 30px 0;
 }
 
-.card-job-index {
-  flex: 1;
-  background-color: #889889;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.container-card .card-job {
+  position: relative;
+  width: 20%;
+  height: 300px;
+  box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+              inset -5px -5px 5px rgba(255, 255, 255, 0.274),
+              5px 5px 5px rgba(0,0,0,0.05),
+              -5px -5px 5px rgba(255, 255, 255, 0.267);
+  border-radius: 10px;
+  margin: 30px;
+}
+
+.container-card .card-job .box-job {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #73637271;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.13);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.container-card .card-job:hover .box-job {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  background: linear-gradient(45deg, #889889, #886c86);
+
+}
+
+.container-card .card-job .box-job .content-job {
+  padding: 10px;
   text-align: center;
 }
 
-.card-job-index h5 {
-  margin-top: 0;
+
+
+.container-card .card-job .box-job .content-job h3 {
+  font-size: 1.3em;
+  color: #424242;
+  z-index: 1;
+  transition: 0.05s;
+}
+
+.container-card .card-job .box-job .content-job p {
+  font-size: 1em;
+  font-weight: 500;
+  color: #424242;
+  z-index: 1;
+  transition: 0.05s;
+}
+
+.container-card .card-job:hover .box-job .content-job h3,
+.container-card .card-job:hover .box-job .content-job p {
+  color: #fff;
 }
 
 
+//button
 
-.card-job-index li {
-  margin-bottom: 10px;
+.btn-apply {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  background-color: #889889;
+  border-style: solid;
+  border-width: 3px 3px 3px 3px;
+  border-color: #444444;
+  border-radius: 10px;
+  padding: 15px 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-apply:hover {
+  background-color: #778578;
+  transition: transform 0.2s;
+  transform: scale(1.02);
 }

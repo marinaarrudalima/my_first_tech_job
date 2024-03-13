@@ -42,7 +42,9 @@
 }
 
 .btn-banner:hover {
-  background: #584c58;
+  background-color: #584c58;
+  transition: transform 0.2s;
+  transform: scale(1.02);
 }
 
 // texto com os icones

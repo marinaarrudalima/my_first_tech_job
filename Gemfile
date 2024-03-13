@@ -56,6 +56,8 @@ gem "pundit"
 gem "cloudinary"
 gem "countries"
 gem "cloudinary"
+gem "ruby-openai"
+
 
 group :development, :test do
   gem "dotenv-rails"

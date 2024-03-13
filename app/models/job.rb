@@ -12,7 +12,7 @@ class Job < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_title_programming_languagues_companyname,
-    against: [:title, :programming_languages],
+    against: [:title, :programming_languages, :location],
     associated_against: {
       company: [:name]
     },
