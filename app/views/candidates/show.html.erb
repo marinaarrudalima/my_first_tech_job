@@ -2,7 +2,7 @@
   <div class="profile-banner">
     <div class="name-photo">
     <% unless @candidate.photo.attached? %>
-      <%= image_tag "blank-profile.png", class: "avatar-profile" %>
+      <%= image_tag "blank-profile-picture.png", class: "avatar-profile" %>
     <% else %>
       <%= cl_image_tag @candidate.photo.key, gravity: :face, class: "avatar-profile"%>
     <% end %>
