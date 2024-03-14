@@ -246,7 +246,7 @@
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 8px;
-  max-width: 700px;
+  max-width: 750px;
   box-shadow: 1px 1px 2px #73637278;
   transition: transform 0.2s;
   position: relative;
@@ -284,6 +284,14 @@
   align-items: baseline;
   gap: 5px;
   color: #736372;
+}
+
+.buttons-match-job{
+  display:grid;
+  gap: 3px;
+  position:absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .doa-match-job {
