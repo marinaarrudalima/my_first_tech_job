@@ -13,7 +13,7 @@
     <div class="card-job">
       <div class="box-job">
         <div class="content-job">
-          <h3 class="title-job mb-3"><strong>City:</strong></h3>
+          <h3 class="title-job mb-3"><strong>Location:</strong></h3>
           <p><%= @job.location %></p></li>
         </div>
       </div>
@@ -34,7 +34,7 @@
           <h3 class="title-job mb-3"><strong>Benefits:</strong></h3>
           <p>Work Visa: <%= @job.work_visa %></p>
           <p><%= @job.benefits %></p>
-          <p><%= @job.salary %></p>
+          <p>Salary:<%= @job.salary %></p>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-  
+
   <% if current_user.role_candidate? && current_user.candidate.matches.where(job: @job).count.zero? %>
     <%= simple_form_for [@job, @match] do |f| %>
       <div class="container-btn">
