@@ -75,7 +75,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_182025) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string "title"
     t.string "job_description"
     t.string "soft_skills"
     t.text "programming_languages", default: [], array: true
