@@ -20,7 +20,15 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar", alt: "dropdown menu" %>
+            <% if current_user.company != nil  %>
+              <%= cl_image_tag current_user.company.logo.key, crop: :fill, class: "avatar", alt: "dropdown menu" %>
+            <% elsif current_user.candidate != nil && current_user.candidate.photo.attached? %>
+              <%= cl_image_tag current_user.candidate.photo.key, gravity: :face, class: "avatar", alt: "dropdown menu" %>
+            <% elsif current_user.candidate != nil %>
+              <%= image_tag "blank-profile-picture.png", class: "avatar", alt: "dropdown menu" %>
+            <% else %>
+              <%= image_tag "blank-profile-picture.png", class: "avatar", alt: "dropdown menu" %>
+            <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if current_user.company != nil  %>
@@ -31,8 +39,7 @@
             <% elsif current_user.candidate != nil   %>
               <%= link_to "My Applications", my_matches_path, class: "dropdown-item" %>
               <%= link_to "My Profile", candidate_path(current_user.candidate), class: "dropdown-item" %>
-              <%= link_to "Companies", "/companies", class: "dropdown-item" %>
-              <%= link_to "Edit Profile", edit_candidate_path(current_user.candidate.id), class: "dropdown-item" %>
+              <%= link_to "Edit Profile", edit_candidate_path(current_user.candidate), class: "dropdown-item" %>
             <% else %>
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             <% end %>
