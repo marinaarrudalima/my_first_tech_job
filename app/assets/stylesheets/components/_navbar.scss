@@ -15,9 +15,20 @@
 }
 
 .navbar-btn {
+  display:flex;
   background-color: #7363723b;
+  text-decoration: none;
   color: #736372;
+  margin-right:10px ;
+  margin-top:3px;
+  padding: 5px;
+  padding-left: 7px;
+  padding-right:7px;
   border-radius: 10px;
-  margin-bottom: 10px;
-  width: 100%
+  transition: box-shadow 0.3s;
+}
+
+.navbar-btn:hover {
+  box-shadow: 0px 0px 2px #7363729b;
+  transition: box-shadow 0.3s;
 }
