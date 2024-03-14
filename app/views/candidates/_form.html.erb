@@ -9,13 +9,13 @@
         <%= f.input :gender, as: :select, collection: ["Female", "Non-binary", "Male",  "Other"], include_blank: true %>
         <%= f.input :birth_date, as: :date, start_year: Time.now.year - 100, end_year: Time.now.year - 18, include_blank: true %>
         <%= f.input :photo, as: :file %>
-        <%= f.input :summary %>
+        <%= f.input :summary, as: :text, input_html: { rows: 4, maxlength: 800 } %>
         <%= f.input :tech_languages, as: :check_boxes, collection: Candidate::LANGUAGES_OPTIONS, input_html: { multiple: true, name: "candidate[tech_languages][]" } %>
         <%= f.input :tech_interest, as: :check_boxes, collection: Candidate::INTEREST_OPTIONS, input_html: { multiple: true, name: "candidate[tech_interest][]" } %>
         <%= f.input :preferred_companies %>
         <%= f.input :cv_upload, as: :file %>
         <%= f.input :terms_conditions, as: :boolean %>
-        <%= f.submit "Submit", class: "btn btn-secondary success"%>
+        <%= f.submit "Submit", class: "btn1"%>
       <% end %>
   </div>
 </div>

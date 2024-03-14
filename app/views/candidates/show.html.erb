@@ -2,12 +2,15 @@
   <div class="profile-banner">
     <div class="name-photo">
     <% unless @candidate.photo.attached? %>
-      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-profile" %>
+      <%= image_tag "blank-profile-picture.png", class: "avatar-profile" %>
     <% else %>
       <%= cl_image_tag @candidate.photo.key, gravity: :face, class: "avatar-profile"%>
     <% end %>
     <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
     </div>
+    <% if current_user.candidate == @candidate %>
+      <%= link_to "Edit your profile", edit_candidate_path, class: "btn-profile" %>
+    <% end %>
   </div>
 
   <div class="profile-body">
@@ -15,7 +18,7 @@
     <h4> &lt;/ &gt; Basic Information</h4>
       <div class ="column-card">
         <strong>Summary</strong><br><br>
-        <% @candidate.summary %>
+        <%= @candidate.summary %>
       </div>
       <div class ="column-card">
         <strong>Resumé</strong><br><br>
@@ -44,5 +47,3 @@
     </div>
   </div>
 </div>
-<%# <%= link_to "Edit your profile", edit_candidate_path, class: "btn btn-primary" %>
-<%# <%= link_to "Your applications", my_matches_path, class: "btn btn-primary" %>

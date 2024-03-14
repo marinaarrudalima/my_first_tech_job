@@ -1,9 +1,12 @@
 <div class="profile-container">
   <div class="profile-banner">
     <div class="name-photo">
-      <%= cl_image_tag @company.logo.key, crop: :fill, class: "avatar-profile"%>
+      <%= cl_image_tag @company.logo.key, crop: :fill, class: "avatar-profile" %>
+      <h1><%= @company.name %></h1>
     </div>
-    <div class="container"><h1><%= @company.name %></h1></div>
+    <% if current_user.company == @company %>
+      <%= link_to "Edit your profile", edit_company_path, class: "btn-profile" %>
+    <% end %>
   </div>
 
   <div class="profile-body">
