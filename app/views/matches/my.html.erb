@@ -1,13 +1,13 @@
 <% if current_user.candidate %>
   <div class="container">
-    <h2><strong>My Matches</strong></h2>
+    <h2><strong>My Applications</strong></h2>
     <div class="card-matches-container">
       <% @matches.each do |match| %>
         <div class="card-match">
           <div class="card-match-info">
             <%= cl_image_tag match.job.company.logo.key, class: "company-logo" %>
             <div class="job-details">
-              <%= match.job.title %> at <%= match.job.company.name %>
+              <strong><%= match.job.title %></strong> at <%= match.job.company.name %>
               <br><%= match.job.location %>
               <br>$<%= match.job.salary %>
               <div class="status">

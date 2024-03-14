@@ -6,7 +6,7 @@
       <%= simple_form_for @company do |f| %>
         <%= f.input :name %>
         <%= f.input :headquarters %>
-        <%= f.input :industry, collection: ['Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Energy', 'Reatil and e-commerce', 'Real estate and construction', 'Telecommunications', 'Hospitality and Tourism', 'Food and Beverage', 'Other'], prompt: 'Select an industry from the dropdown' %>
+        <%= f.input :industry, collection: ['Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Energy', 'Retail and E-commerce', 'Real estate and construction', 'Telecommunications', 'Hospitality and Tourism', 'Food and Beverage', 'Other'], prompt: 'Select an industry from the dropdown' %>
         <%= f.input :description %>
         <%= f.input :contact_info %>
         <%= f.input :logo, as: :file %>

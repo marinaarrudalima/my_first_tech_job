@@ -4,7 +4,7 @@
         <%= f.error_notification %>
         <%= f.input :first_name %>
         <%= f.input :last_name %>
-        <%= f.input :address %>
+        <%= f.input :address, hint: "Please indicate if you are willing to work remotely by including '/remote' at the end of your address" %>
         <%= f.input :nationality, as: :select, collection: ISO3166::Country.all.map { |c| c.iso_short_name }, include_blank: 'Please Select' %>
         <%= f.input :gender, as: :select, collection: ["Female", "Non-binary", "Male",  "Other"], include_blank: true %>
         <%= f.input :birth_date, as: :date, start_year: Time.now.year - 100, end_year: Time.now.year - 18, include_blank: true %>
@@ -14,7 +14,7 @@
         <%= f.input :tech_interest, as: :check_boxes, collection: Candidate::INTEREST_OPTIONS, input_html: { multiple: true, name: "candidate[tech_interest][]" } %>
         <%= f.input :preferred_companies %>
         <%= f.input :cv_upload, as: :file %>
-        <%= f.input :terms_conditions, as: :boolean %>
+        <%= f.input :terms_conditions, as: :boolean, label: "I have read and accept the Terms of Service and Privacy Policy." %>
         <%= f.submit "Submit", class: "btn1"%>
       <% end %>
   </div>
