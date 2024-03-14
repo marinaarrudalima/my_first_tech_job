@@ -6,11 +6,11 @@
   <div class="container justify-content-center">
     <div class="row justify-content-center">
       <div class="col">
-        <%= form_with url:jobs_path, method: :get, class: "search" do %>
+        <%= form_with url:jobs_path, method: :get, class: "searchbar-jobs" do %>
         <i class="fa-solid fa-magnifying-glass"></i>
           <%= text_field_tag :query,
             params[:query],
-            class: "search-input",
+            class: "searchbar-jobs-input",
             placeholder: "Search by position, company or location"%>
         <% end %>
       </div>
