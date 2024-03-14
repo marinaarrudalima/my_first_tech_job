@@ -22,10 +22,12 @@
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <% if current_user.company != nil  %>
               <%= cl_image_tag current_user.company.logo.key, crop: :fill, class: "avatar", alt: "dropdown menu" %>
-            <% elsif current_user.candidate != nil %>
+            <% elsif current_user.candidate != nil && current_user.candidate.photo.attached? %>
               <%= cl_image_tag current_user.candidate.photo.key, gravity: :face, class: "avatar", alt: "dropdown menu" %>
+            <% elsif current_user.candidate != nil && current_user.candidate.photo.attached? %>
+              <%= image_tag "blank-profile.png", class: "avatar", alt: "dropdown menu" %>
             <% else %>
-              <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar", alt: "dropdown menu" %>
+              <%= image_tag "blank-profile.png", class: "avatar", alt: "dropdown menu" %>
             <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
