@@ -56,7 +56,7 @@ class JobsController < ApplicationController
     if @job.destroy
       redirect_to my_jobs_path
     else
-      render my_jobs_path, status: :unprocessable_entity
+      render my_jobs_jobs_path, status: :unprocessable_entity
     end
   end
 
@@ -65,6 +65,6 @@ class JobsController < ApplicationController
   def job_params
     params[:job][:tech_interests].delete_if(&:empty?)
     params[:job][:programming_languages].delete_if(&:empty?)
-    params.require(:job).permit(:title, :job_description, :soft_skills, :work_visa, :salary, :benefits, :application_deadline, :date_posted, :location, :tech_interests=>[], :programming_languages=>[])
+    params.require(:job).permit(:title, :job_description, :soft_skills, :work_visa, :salary, :benefits, :application_deadline, :date_posted, :location, :programming_languages=>[])
   end
 end
