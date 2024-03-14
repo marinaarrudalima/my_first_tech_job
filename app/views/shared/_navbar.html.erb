@@ -32,7 +32,7 @@
               <%= link_to "My Applications", my_matches_path, class: "dropdown-item" %>
               <%= link_to "My Profile", candidate_path(current_user.candidate), class: "dropdown-item" %>
               <%= link_to "Companies", "/companies", class: "dropdown-item" %>
-              <%= link_to "Edit Profile", edit_candidate_path(current_user.candidate), class: "dropdown-item" %>
+              <%= link_to "Edit Profile", edit_candidate_path(current_user.candidate.id), class: "dropdown-item" %>
             <% else %>
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             <% end %>
