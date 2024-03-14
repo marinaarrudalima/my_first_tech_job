@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :companies
 
   resources :jobs do
+    get "temp", on: :collection
     get "my_jobs", on: :collection
     resources :matches, only: %i[index create] # quem acessa o index é company quem acessa create é candidate
   end

@@ -1,11 +1,11 @@
 <% if current_user.company %>
-  <div class="container">
+  <div class="cards-container">
     <h2><strong>My Jobs</strong></h2>
     <div class="cards-container">
       <% @jobs = Job.where(company_id: current_user.company.id) %>
       <% @jobs.each do |job| %>
         <%= link_to job_path(job) do %>
-          <div class="card-product-infos">
+          <div class="card-product">
             <%= cl_image_tag job.company.logo.key, crop: :fill%>
             <p>
               <%= job.title %> <br>at <strong><%= job.company.name %></strong>

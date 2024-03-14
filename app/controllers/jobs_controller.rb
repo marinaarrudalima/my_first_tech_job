@@ -60,10 +60,14 @@ class JobsController < ApplicationController
     end
   end
 
+  def temp
+    @jobs = Job.all
+    @jobs = Job.search_by_title_programming_languagues_companyname(params[:query]) if params[:query].present?
+  end
+
   private
 
   def job_params
-    params[:job][:tech_interests].delete_if(&:empty?)
     params[:job][:programming_languages].delete_if(&:empty?)
     params.require(:job).permit(:title, :job_description, :soft_skills, :work_visa, :salary, :benefits, :application_deadline, :date_posted, :location, :programming_languages=>[])
   end
