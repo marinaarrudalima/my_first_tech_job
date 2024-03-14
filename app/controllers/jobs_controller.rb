@@ -56,7 +56,7 @@ class JobsController < ApplicationController
     if @job.destroy
       redirect_to my_jobs_path
     else
-      render my_jobs_path, status: :unprocessable_entity
+      render my_jobs_jobs_path, status: :unprocessable_entity
     end
   end
 
