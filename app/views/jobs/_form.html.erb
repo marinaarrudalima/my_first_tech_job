@@ -1,0 +1,14 @@
+<%= simple_form_for @job do |f| %>
+  <%= f.input :title %>
+  <%= f.input :location %>
+  <%= f.input :job_description %></p>
+  <%= f.input :soft_skills %></p>
+  <%= f.input :programming_languages, as: :check_boxes, collection: Job::LANGUAGES_OPTIONS, input_html: { multiple: true, name: "job[programming_languages][]" } %>
+  <%= f.input :tech_interests, as: :check_boxes, collection: Job::INTEREST_OPTIONS, input_html: { multiple: true, name: "job[tech_interests][]" } %>
+  <%= f.input :work_visa %></p>
+  <%= f.input :salary %></p>
+  <%= f.input :benefits %></p>
+  <%= f.input :application_deadline %></p>
+  <%= f.input :date_posted %></p>
+  <%= f.submit "Submit", class: "btn1"%>
+<% end %>

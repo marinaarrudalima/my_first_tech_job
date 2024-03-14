@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def new
     if current_user.role_candidate?
       redirect_to root_path
@@ -21,22 +23,38 @@ class JobsController < ApplicationController
     end
   end
 
+
   def index
     @jobs = Job.all
     @jobs = Job.search_by_title_programming_languagues_companyname(params[:query]) if params[:query].present?
-
   end
-
-  # def search
-  #   @jobs = Job.where(status: 0).order(created_at: :desc)
-  #     if params[:query] && params[:query].strip != ""
-  #       @jobs = Job.where(status: 0).search_by_company(params[:query])
-  #     end
-  # end
 
   def show
     @job = Job.find(params[:id])
     @match = Match.new
+
+    if current_user.present? && current_user.role_candidate?
+      @title = @job.title
+      @company = @job.company.name
+      @location = @job.location
+      @description = @job.job_description
+      @soft_skills = @job.soft_skills
+      @programming_languages = @job.programming_languages
+
+      @address = @current_user.candidate.address
+      @summary = @current_user.candidate.summary
+      @tech_interest = @current_user.candidate.tech_interest
+      @tech_languages = @current_user.candidate.tech_languages
+      @preferred_companies = @current_user.candidate.preferred_companies
+
+
+      client = OpenAI::Client.new
+      chaptgpt_response = client.chat(parameters: {
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: "I will give you information for a candidate's profile and the information for a job posting. I want you to cross-match the information on the candidate's skills focusing on key-words (particularly #{@address}, #{@summary}, #{@tech_interest}, #{@tech_languages} and #{@preferred_companies}) and the information on the job listing (particularly #{@title}, #{@job_description}, #{@soft_skills}, #{@programming_languages}, #{@location}) and return a ranking from highest match to poorest job match compatibility. Ensure you also consider if any word in the job listing's information matches a word in the candidate's summary."}]
+      })
+      @content = chaptgpt_response["choices"][0]["message"]["content"]
+    end
   end
 
   def edit
@@ -65,6 +83,8 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :job_description, :soft_skills, :programming_languages, :work_visa, :salary, :benefits, :application_deadline, :date_posted, :location)
+    params[:job][:tech_interests].delete_if(&:empty?)
+    params[:job][:programming_languages].delete_if(&:empty?)
+    params.require(:job).permit(:title, :job_description, :soft_skills, :work_visa, :salary, :benefits, :application_deadline, :date_posted, :location, :tech_interests=>[], :programming_languages=>[])
   end
 end

@@ -2,21 +2,7 @@
   <div class="row justify-content-center">
     <div class="form-box">
       <h4>Create a new job</h4>
-
-      <div class="formcard">
-        <%= simple_form_for @job do |f| %>
-          <%= f.input :title %>
-          <%= f.input :location %>
-          <%= f.input :job_description %>
-          <%= f.input :soft_skills %>
-          <%= f.input :programming_languages %>
-          <%= f.input :work_visa %>
-          <%= f.input :salary %>
-          <%= f.input :benefits %>
-          <%= f.input :application_deadline %>
-          <%= f.input :date_posted %>
-          <%= f.submit "Create", class: "btn1"%>
-        <% end %>
+      <%= render "form", job: @job %>
       </div>
     </div>
   </div>

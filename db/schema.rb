@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_11_194925) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_13_182025) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -78,7 +78,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_194925) do
     t.string "title"
     t.string "job_description"
     t.string "soft_skills"
-    t.string "programming_languages"
+    t.text "programming_languages", default: [], array: true
     t.string "work_visa"
     t.float "salary"
     t.string "benefits"
@@ -88,6 +88,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_194925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "location"
+    t.text "tech_interests", default: [], array: true
     t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 

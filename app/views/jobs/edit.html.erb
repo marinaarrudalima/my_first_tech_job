@@ -3,20 +3,7 @@
     <div class="col-15">
       <div class="form-box">
       <h2>Edit <b><%= @job.title%></b>'s details </h2><br>
-      <%= simple_form_for @job do |f| %>
-        <div class="form-inputs">
-          <%= f.input :title %>
-          <%= f.input :location %>
-          <%= f.input :job_description %></p>
-          <%= f.input :soft_skills %></p>
-          <%= f.input :programming_languages %></p>
-          <%= f.input :work_visa %></p>
-          <%= f.input :salary %></p>
-          <%= f.input :benefits %></p>
-          <%= f.input :application_deadline %></p>
-          <%= f.input :date_posted %></p>
-          <%= f.submit "Update", class: "btn1"%>
-         <% end %>
+        <%= render "form", job: @job %>
       </div>
    </div>
   </div>
