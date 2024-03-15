@@ -16,8 +16,9 @@ export default class extends Controller {
 
         Toastify({
           text: "There is an update to your job application",
-          duration: -1,
+          duration: 3000,
           destination: "matches/my",
+          newWindow: true,
           close: true,
           gravity: "top", // `top` or `bottom`
           position: "left", // `left`, `center` or `right`

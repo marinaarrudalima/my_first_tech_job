@@ -8,6 +8,8 @@
     <% end %>
     <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
     </div>
+    <p>Age <strong><%= ((Time.zone.now - @candidate.birth_date.to_time) / 1.year.seconds).floor %></strong><br>From <strong><%= @candidate.nationality %></strong></p>
+
     <% if current_user.candidate == @candidate %>
       <%= link_to "Edit your profile", edit_candidate_path, class: "btn-profile" %>
     <% end %>
@@ -30,18 +32,15 @@
       <h4> &lt;/ &gt; Skills</h4>
     </div>
       <div class="column-card">
-        Looking for opportunities in the following areas:<br>
-        <ul>
+        Looking for opportunities in the following areas:<br><br>
         <% @candidate.tech_interest.each do |i|%>
-          <br><strong><%= i %> </strong>
+          <p class="bg-tag rounded-pill d-inline-block px-3 py-1"><%= i %></p>
         <% end %>
-        </ul>
       </div>
       <div class ="column-card">
-        Proficient in the following programming languages:<br>
-        <ul>
+        Proficient in the following programming languages:<br><br>
         <% @candidate.tech_languages.each do |i| %>
-          <br><strong><%= i %></strong>
+          <p class="bg-tag rounded-pill d-inline-block px-3 py-1"><%= i %></p>
         <% end %>
       </div>
     </div>
