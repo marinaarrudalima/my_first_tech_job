@@ -30,13 +30,15 @@ class Job < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_title_programming_languagues_companyname,
-    against: [:title, :programming_languages, :location],
+    against: [:title, :programming_languages, :location, :created_at, :application_deadline],
     associated_against: {
       company: [:name]
     },
     using: {
       tsearch: { prefix: true }
     }
+    scope :newest_first, -> { order(created_at: :desc) }
+    scope :closest_deadline, -> { order(application_deadline: :asc)}
 
   def content(user)
     @address = user.candidate.address

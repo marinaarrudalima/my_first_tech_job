@@ -13,6 +13,8 @@
             class: "searchbar-jobs-input",
             placeholder: "Search by position, company or location"%>
         <% end %>
+        <%= link_to "Newest First", jobs_path(query: params[:query], order: :newest_first) %>
+        <%= link_to "Closest Deadline", jobs_path(query: params[:query], order: :closest_deadline) %>
       </div>
     </div>
   </div>
