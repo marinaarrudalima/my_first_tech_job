@@ -4,7 +4,27 @@ class Job < ApplicationRecord
 
   validates :title, :job_description, :location, :soft_skills, :programming_languages, :work_visa, :salary, :application_deadline, presence: true
 
-  LANGUAGES_OPTIONS = ['Ruby', 'JavaScript', 'Python', 'Java', 'C#', 'Swift', 'Kotlin'].freeze
+  LANGUAGES_OPTIONS = ["HTML",
+    "CSS",
+    "JavaScript",   # Widely used in front-end and full-stack development
+    "Python",       # Popular in data science, AI/ML, and back-end development
+    "Java",         # Used in back-end development, Android app development
+    "Ruby",         # Often used in web and back-end development
+    "PHP",          # Common in web development
+    "C#",           # Used in back-end development, mobile apps (Xamarin), and game development
+    "Swift",        # Primary language for iOS app development
+    "Kotlin",       # Used for Android app development and also back-end
+    "TypeScript",   # Gaining popularity in front-end and full-stack development
+    "Scala",        # Used in big data processing and also back-end development
+    "R",            # Used in data analysis and statistics
+    "SQL",          # Essential for database management
+    "Go",           # Known for performance and efficiency, used in cloud services and back-end
+    "Rust",         # Used in systems programming, including blockchain technologies
+    "Dart",         # Used for developing mobile, desktop, backend, and web applications with Flutter
+    "MATLAB",       # Used in engineering, science computations, and AI/ML research
+    "Objective-C",  # Previously used for iOS and OS X development
+    "Shell Scripting" # Useful for DevOps, sysops, and automation tasks
+  ].freeze
 
   validates :programming_languages, inclusion: { in: LANGUAGES_OPTIONS }
 
