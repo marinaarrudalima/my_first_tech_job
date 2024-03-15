@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
     @matches = Match.where(candidate: current_user.candidate)
   end
 
-  def index
+  def index  # quem acessa o index é company
     @job = current_user.company.jobs.find(params[:job_id])
     @matches = Match.where(job: @job)
   end

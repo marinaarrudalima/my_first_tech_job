@@ -54,15 +54,10 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     if @job.destroy
-      redirect_to my_jobs_path
+      redirect_to my_jobs_jobs_path
     else
       render my_jobs_jobs_path, status: :unprocessable_entity
     end
-  end
-
-  def temp
-    @jobs = Job.all
-    @jobs = Job.search_by_title_programming_languagues_companyname(params[:query]) if params[:query].present?
   end
 
   private
