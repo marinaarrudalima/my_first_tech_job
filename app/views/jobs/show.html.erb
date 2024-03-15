@@ -3,7 +3,7 @@
     <p class="banner-text"><%= @job.title %></p>
     <p class="banner-text-small"> <%= @job.company.name %></p>
       <div class="carddeadline mb-4"><strong>Application deadline:</strong> <%= @job.application_deadline.strftime('%d/%m/%y') %></div>
-    <div><p><strong>Job compatibility:</strong> <%= @content %></p></div>
+    <div><p> <%= raw @content %></p></div>
   </div>
 
   <div>
