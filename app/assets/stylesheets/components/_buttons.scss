@@ -25,7 +25,18 @@
   background-color: #7363726a
 }
 
-.btn2 {
-  border-style: none;
-  background-color: none;
+.btn-small-aubergine {
+  display:flex;
+  background-color: #7363723b;
+  text-decoration: none;
+  font-weight: bold;
+  color: #736372;
+  padding: 4px 8px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+
+  :hover {
+    box-shadow: 0px 0px 2px #7363729b;
+    transition: box-shadow 0.3s;
+  }
 }
