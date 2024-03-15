@@ -78,12 +78,13 @@
 }
 
 .bg-count{
-  border-width: 2px;
+  border-width: 1px;
   border-color: $lighter-green;
   border-style: solid;
   box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.5);
   color: $darker-green;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: bold;
   white-space:nowrap;
 }
 
