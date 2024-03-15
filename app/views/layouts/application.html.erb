@@ -6,7 +6,7 @@
     <%= favicon_link_tag asset_path('Logo_Vector.png') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'custom_devise' %>
 
@@ -14,11 +14,16 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <% if current_user %>
+      <div data-controller="notification-subscription"
+      data-notification-subscription-user-id-value="<%= current_user.id %>">
+      </div>
+      <% end %>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
 
-    <%= yield %>
+      <%= yield %>
 
-    <%= render 'shared/footer' %>
-  </body>
+      <%= render 'shared/footer' %>
+   </body>
 </html>

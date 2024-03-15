@@ -28,8 +28,8 @@ class Candidate < ApplicationRecord
     "Project Management",
     "Generative AI & Creative Technologies"].freeze
   LANGUAGES_OPTIONS = [
-    "HTML (Not a programming language, but crucial for Web Dev)",
-    "CSS (Not a programming language, but crucial for styling in Web Dev)",
+    "HTML",
+    "CSS",
     "JavaScript",   # Widely used in front-end and full-stack development
     "Python",       # Popular in data science, AI/ML, and back-end development
     "Java",         # Used in back-end development, Android app development
