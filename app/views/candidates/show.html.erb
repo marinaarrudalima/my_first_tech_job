@@ -4,7 +4,7 @@
     <% unless @candidate.photo.attached? %>
       <%= image_tag "blank-profile-picture.png", class: "avatar-profile" %>
     <% else %>
-      <%= cl_image_tag @candidate.photo.key, gravity: :face, class: "avatar-profile"%>
+      <%= cl_image_tag @candidate.photo.key, :gravity=>"faces", :radius=>"max", class: "avatar-profile"%>
     <% end %>
     <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
     </div>
