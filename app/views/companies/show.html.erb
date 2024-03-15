@@ -27,8 +27,8 @@
       </div>
     </div>
     <div class="body-column">
+    <h4> &lt;/&gt; Available Positions</h4>
       <div class="column-card">
-        <strong>Available Positions</strong><br><br>
         <% @jobs = Job.where(company_id: params[:id]) %>
         <% @jobs.each do |job| %>
           <div class="link-jobs">
