@@ -2,9 +2,36 @@
 
 //BANNER
 
+.container-name-company {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 30px;
+  align-items: center;
+  height: fit-content;
+
+}
+
+.left-column {
+  grid-column: 1 / 2;
+  margin: 10px;
+}
+
+.right-column {
+  grid-column: 2 / 3;
+  background-color: #8898898c;
+  border-radius: 10px;
+  margin: 10px;
+  height: 180px;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
 .banner-text {
   color: #141414;
 }
+
 .banner-text-small {
   color: #141414;
   font-size: 1.8em;
