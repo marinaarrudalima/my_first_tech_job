@@ -17,7 +17,7 @@
 
   <div class="profile-body">
     <div class="body-column">
-    <h4> &lt;/ &gt; Basic Information</h4>
+    <h4> &lt;/&gt; Basic Information</h4>
       <div class ="column-card">
         <strong>Summary</strong><br><br>
         <%= @candidate.summary %>
@@ -32,13 +32,13 @@
       <h4> &lt;/ &gt; Skills</h4>
     </div>
       <div class="column-card">
-        Looking for opportunities in the following areas:<br><br>
+        <b>Looking for opportunities in...</b><br><br>
         <% @candidate.tech_interest.each do |i|%>
           <p class="bg-tag rounded-pill d-inline-block px-3 py-1"><%= i %></p>
         <% end %>
       </div>
       <div class ="column-card">
-        Proficient in the following programming languages:<br><br>
+        <b>Interest in the following programming languages:</b><br><br>
         <% @candidate.tech_languages.each do |i| %>
           <p class="bg-tag rounded-pill d-inline-block px-3 py-1"><%= i %></p>
         <% end %>
