@@ -15,7 +15,7 @@
                   <p><strong>Application status:</strong> <%= match.status.gsub(/_/,' ') %></p>
                   <%= simple_form_for match do |f| %>
                     <div class = "match-change">
-                    <%= f.input :status, label: false, collection: Match.statuses.keys, class:"statuses-collection" %>
+                    <%= f.input :status, label: false, collection: [['Submitted', :Submitted], ['Review', :Review], ['First Interview', :First_interview], ['Second Interview', :Second_interview], ['Job Offer', :Job_offer], ['Onboarded', :Onboarded],['Rejected', :Rejected]], class:"statuses-collection" %>
                     <%= f.submit "Change", class:"btn-change" %>
                     </div>
                     <div class="buttons-match-job">
@@ -24,7 +24,7 @@
                   <% end %>
                 </li>
               </ul>
-              <div class="doa-match-job">Date of application: <%= match.candidate.created_at.strftime("%d-%b-%Y %H:%M") %></div>
+              <div class="doa-match-job">Date of application: <%= match.candidate.created_at.strftime("%d %b %Y %H:%M") %></div>
             </div>
           </div>
         </div>

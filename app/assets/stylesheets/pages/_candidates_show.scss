@@ -40,16 +40,19 @@
 .profile-body {
   display: flex;
   margin-top: 100px;
-  gap: 20px;
   justify-content:center;
+  padding-left:20px;
+  padding-right:20px;
 }
 
 .body-column {
-  flex:50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-color: #DDDDDD;
   border-width: 1px;
   border-style: solid;
-  margin: 50px;
+  margin:25px;
   padding: 30px;
   box-shadow: 1px 1px 3px #DDDDDD;
   height: fit-content;
@@ -59,7 +62,7 @@
   word-break: break-all;
   width:450px;
   color: #695a68;
-  margin: 50px;
+  margin: 20px;
   padding: 20px;
   background-color: #DDDDDD;
   box-shadow: 1px 1px 3px #736372;

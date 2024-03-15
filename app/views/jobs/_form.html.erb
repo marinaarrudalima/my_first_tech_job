@@ -2,11 +2,11 @@
   <%= f.input :title %>
   <%= f.input :location, hint: "Please indicate if this job is fully remote or hybrid, and the location."
  %>
-  <%= f.input :job_description %></p>
+  <%= f.input :job_description, as: :text, input_html: { rows: 4, maxlength: 2000 } %></p>
   <%= f.input :soft_skills %></p>
   <%= f.input :programming_languages, as: :check_boxes, collection: Job::LANGUAGES_OPTIONS, input_html: { multiple: true, name: "job[programming_languages][]" } %>
   <%= f.input :work_visa %></p>
-  <%= f.input :salary %></p>
+  <%= f.input :salary, hint: "per month" %></p>
   <%= f.input :benefits %></p>
   <%= f.input :application_deadline %></p>
   <%= f.input :date_posted %></p>
