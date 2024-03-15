@@ -1,18 +1,18 @@
 <div class="container mt-5 mb-5">
-   <div class="container-name-company">
+  <div class="container-name-company">
     <div class="left-column">
       <p class="banner-text mb-1"><%= @job.title %></p>
       <p class="banner-text-small">at <%= @job.company.name %></p>
       <div class="carddeadline mb-4"><strong>Application deadline:</strong> <%= @job.application_deadline.strftime('%d %b %Y') %></div>
     </div>
 
-     <div><p> <%= raw @content %></p></div>
-
-    <div class="right-column">
-      <div>
-        <p><strong>Job compatibility:</strong> <%= @content %></p>
+    <% if current_user.role_candidate? %>
+      <div class="right-column">
+        <div>
+          <p><%= raw @content %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
 
