@@ -17,7 +17,7 @@
                           <p>posted in <strong><%= job.date_posted.strftime('%d %b %Y') %></strong></p>
                         </div>
                         <div class="round-count">
-                          <p class="bg-count rounded-pill d-inline-block px-3">has <b class="fs-3"><%= job.matches.all.count %></b> <%= "application".pluralize(job.matches.count) %></p>
+                          <p class="bg-count rounded-pill d-inline-block px-2"><b class="fs-5"><%= job.matches.all.count %></b> <%= "application".pluralize(job.matches.count) %></p>
                         </div>
                       </div>
                       <div>
