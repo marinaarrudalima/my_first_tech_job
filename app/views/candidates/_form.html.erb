@@ -15,7 +15,7 @@
         <%= f.input :tech_interest, as: :check_boxes , label: "Tech Interests - Select those which you would be willing to engage and become!", collection: Candidate::INTEREST_OPTIONS, input_html: { multiple: true, name: "candidate[tech_interest][]"} %>
 
         <%= f.input :preferred_companies %>
-        <%= f.input :cv_upload, as: :file %>
+        <%= f.input :cv_upload, as: :file, label: "CV upload" %>
         <%= f.input :terms_conditions, as: :boolean, label: "I have read and accept the Terms of Service and Privacy Policy." %>
         <%= f.submit "Submit", class: "btn1"%>
       <% end %>
