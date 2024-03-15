@@ -5,7 +5,7 @@ class Candidate < ApplicationRecord
   has_one_attached :cv_upload
 
   validates :first_name, :last_name, :birth_date, :address,
-            :nationality, :gender, :tech_interest, :tech_languages, :cv_upload, :terms_conditions, presence: true
+            :nationality, :gender, :tech_interest, :tech_languages, :terms_conditions, presence: true
   validates :terms_condition, acceptance: true
   validates :summary, length: { maximum: 800 }
   # Custom validation method, if you want to ensure that tech_interest and tech_languages only contain specific values

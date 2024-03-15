@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <% if current_user.role_candidate? && current_user.candidate.matches.where(job: @job).count.zero? %>
+  <% if current_user && current_user.role_candidate? && current_user.candidate.matches.where(job: @job).count.zero? %>
     <%= simple_form_for [@job, @match] do |f| %>
       <div class="container-btn">
         <div class="row justify-content-center">
