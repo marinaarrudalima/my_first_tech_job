@@ -57,7 +57,7 @@ gem "cloudinary"
 gem "countries"
 gem "cloudinary"
 gem "ruby-openai"
-
+gem "redis"
 
 group :development, :test do
   gem "dotenv-rails"
