@@ -8,7 +8,7 @@
     <% end %>
     <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
     </div>
-    <p>Age <strong><%= ((Time.zone.now - @candidate.birth_date.to_time) / 1.year.seconds).floor %></strong><br>From <strong><%= @candidate.nationality %></strong></p>
+    <p>Age <strong><%= ((Time.zone.now - @candidate.birth_date.to_time) / 1.year.seconds).floor %></strong><br>From: <strong><%= @candidate.nationality %></strong></p>
 
     <% if current_user.candidate == @candidate %>
       <%= link_to "Edit your profile", edit_candidate_path, class: "btn-profile" %>
@@ -24,7 +24,11 @@
       </div>
       <div class ="column-card">
         <strong>Resumé</strong><br><br>
-        <%= link_to 'Check CV', rails_blob_url(@candidate.cv_upload, disposition: "attachment"), target: "_blank", class: "btn-dark" %>
+        <% if @candidate.cv_upload.attached?  %>
+          <%= link_to 'Check CV', rails_blob_url(@candidate.cv_upload, disposition: "attachment"), target: "_blank", class: "btn-dark" %>
+        <% else %>
+          <p>Resume not uploaded</p>
+        <% end %>
       </div>
     </div>
     <div class="body-column">
