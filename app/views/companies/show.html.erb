@@ -4,6 +4,7 @@
       <%= cl_image_tag @company.logo.key, crop: :fill, class: "avatar-profile" %>
       <h1><%= @company.name %></h1>
     </div>
+    <p>Located in <strong><%= @company.headquarters %></strong></p>
     <% if current_user.company == @company %>
       <%= link_to "Edit your profile", edit_company_path, class: "btn-profile" %>
     <% end %>
@@ -11,30 +12,43 @@
 
   <div class="profile-body">
     <div class="body-column">
-    <div class="column-intro">
-      <h4> &lt;/ &gt; Details</h4>
-    </div>
-      <div class ="column-card">
+      <div class="column-intro">
+        <h4> &lt;/&gt; Details</h4>
+      </div>
+      <div class="column-card">
         <strong>About</strong><br><br>
         <p><%= @company.description %></p>
       </div>
       <div class="column-card">
-        <p>Company: <%= @company.name %></p>
-        <p>Headquarters: <%= @company.headquarters %></p>
-        <p>Industry: <%= @company.industry %></p>
-        <p>Contact: <%= @company.contact_info %></p>
+        <p><b>Company:</b> <%= @company.name %></p>
+        <p><b>Headquarters:</b> <%= @company.headquarters %></p>
+        <p><b>Industry:</b> <%= @company.industry %></p>
+        <p><b>Contact:</b> <%= @company.contact_info %></p>
       </div>
     </div>
     <div class="body-column">
-      <div class ="column-card">
-        <strong>Jobs Available</strong><br><br>
+    <h4> &lt;/&gt; Available Positions</h4>
+      <div class="column-card">
         <% @jobs = Job.where(company_id: params[:id]) %>
         <% @jobs.each do |job| %>
-          <div class="link-jobs"><ul>
-          <%= link_to job_path(job) do %>
-            <li><%= job.title %> - <%= job.location %></li>
-          <% end %>
-          </ul></div>
+          <div class="link-jobs">
+              <%= link_to job_path(job) do %>
+                <div class="mini-card-job">
+                  <b><h3><%= job.title %></h3></b>
+                  <div>
+                    <% job.programming_languages.each do |tag| %>
+                    <div class="bg-tag rounded-pill d-inline-block px-3 py-1 mt-1">
+                      <%=tag%>
+                    </div>
+                    <% end %>
+                  </div>
+                  <div class="mini-card-job-base">
+                    <p><strong>Location: </strong><%= job.location %></p>
+                    <p><strong>Deadline: </strong><%= job.application_deadline.strftime('%d %b %Y') %></p>
+                  </div>
+                </div>
+              <% end %>
+          </div>
         <% end %>
       </div>
     </div>
