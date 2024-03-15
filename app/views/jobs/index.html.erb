@@ -36,7 +36,7 @@
                   </div>
                   <div class="d-flex justify-content-between w-100">
                     <p><b>Location: </b><%= job.location %></p>
-                    <p><b>Deadline: </b><%= job.application_deadline %></p>
+                    <p><b>Deadline: </b><%= job.application_deadline.strftime('%d/%m/%y') %></p>
                   </div>
                 </div>
               </div>
