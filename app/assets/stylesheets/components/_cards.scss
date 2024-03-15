@@ -1,11 +1,9 @@
 // index de jobs
 
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 28px 0;
 }
 
 .container h6 {
@@ -13,40 +11,36 @@
   margin-left: 10px;
 }
 
-.card-product-infos {
-  flex-basis: calc(33.33% - 20px); /* Adjust based on desired width and gap */
+// JOBS
+
+.card-gray-bottom{
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+}
+
+// .card-gray-bottom:hover {
+//   transition: transform 0.2s;
+//   transform: scale(1.02);
+//   box-shadow: 1px 1px 4px #736372ac;
+// }
+
+.card-product {
+  display: flex;
+  height: 100%;
   background-color: #ffffffc9;
-  margin: 10px;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 1px 1px 2px #73637278;
   transition: transform 0.2s;
 }
 
-.card-product-infos:hover {
-  transition: transform 0.2s;
-  transform: scale(1.02);
-  box-shadow: 1px 1px 2px #736372ac;
-}
-
-.card-product-infos a {
+.card-product a {
   display: flex;
-  justify-content: start;
   color: #736372;
   text-decoration:none;
 }
 
-.card-product-infos p {
-  margin: 5px;
-  padding: 5px;
-  display: block;
-  width: 250px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.card-product-infos img {
-  height: 100%;
+.card-product img {
   width: 150px;
   object-fit: cover;
   border-top-left-radius: 8px;
@@ -56,22 +50,71 @@
   border-right-width: 3px;
 }
 
+.card-product-infos  {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 22px;
+  gap: 20px;
+  width: 100%;
+  color: $aubergine;
+
+  h4, p {
+    margin:0;
+  }
+}
+
+.card-product-head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg-tag{
+  background-color: $darker-green;
+  color: $platinum;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.bg-count{
+  background-color: $darker-green;
+  color: $platinum;
+  font-size: 14px;
+}
+
+.card-product-flex {
+  background-color: #DDDDDD;
+  color: #DDDDDD;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 10px 22px;
+  gap: 8px;
+  border-bottom: 4px;
+  box-shadow: 1px 1px 2px #73637278;
+}
+
+.card-product-icons {
+  display: flex;
+  gap: 20px;
+  text-decoration: d-none;
+  font-size: 22px;
+
+  i{
+    color: $aubergine;
+  }
+}
+
 .container h2 {
   margin: 20px;
   margin-left: 10px;
   color: #736372;
 }
 
-.card-product-flex {
-  background-color: #DDDDDD;
-  color: #DDDDDD;
-  display: flex;
-  justify-content: space-evenly;
-  align-items:center;
-  gap: 8px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
+
+// MATCHES
 
 .message {
   color: #736372;
