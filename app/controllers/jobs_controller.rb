@@ -25,8 +25,15 @@ class JobsController < ApplicationController
 
 
   def index
-    @jobs = Job.all
-    @jobs = Job.search_by_title_programming_languagues_companyname(params[:query]) if params[:query].present?
+    if params[:query].present?
+      @jobs = Job.search_by_title_programming_languagues_companyname(params[:query]).order(created_at: :desc)
+    elsif params[:order] == 'newest_first'
+      @jobs = Job.all.order(created_at: :desc)
+    elsif params[:order] == 'closest_deadline'
+      @jobs = Job.all.order(application_deadline: :asc)
+    else
+      @jobs = Job.all
+    end
   end
 
   def show
