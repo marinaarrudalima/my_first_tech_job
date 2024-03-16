@@ -5,7 +5,7 @@
  interests, and location!</h6>
   <div class="container justify-content-center">
     <div class="row justify-content-center">
-      <div class="col">
+      <div class="d-flex align-baseline gap-3">
         <%= form_with url:jobs_path, method: :get, class: "searchbar-jobs" do %>
         <i class="fa-solid fa-magnifying-glass"></i>
           <%= text_field_tag :query,
@@ -13,8 +13,27 @@
             class: "searchbar-jobs-input",
             placeholder: "Search by position, company or location"%>
         <% end %>
-        <%= link_to "Newest First", jobs_path(query: params[:query], order: :newest_first) %>
-        <%= link_to "Closest Deadline", jobs_path(query: params[:query], order: :closest_deadline) %>
+
+        <label class="toggle mt-3">
+        <%= link_to jobs_path(toggle_params(:newest_first)), id: "sort-toggle", class: "toggle-link #{'active' if params[:order] == 'newest_first'}" do %>
+          <label class="switch">
+            <p class="toggle-text">most recent</p>
+            <%= check_box_tag 'newest_first', '1', params[:order] == 'newest_first', style: 'display: none;' %>
+            <span class="slider round"></span>
+          </label>
+        <% end %>
+        </label>
+        <label class="toggle mt-3">
+        <%= link_to jobs_path(toggle_params(:closest_deadline)), id: "deadline-toggle", class: "toggle-link #{'active' if params[:order] == 'closest_deadline'}" do %>
+          <label class="switch">
+            <p class="toggle-text">nearest deadline</p>
+            <%= check_box_tag 'closest_deadline', '1', params[:order] == 'closest_deadline', style: 'display: none;' %>
+            <span class="slider round"></span>
+          </label>
+        <% end %>
+      </label>
+        <%# <%= link_to toggle_link_text(params[:order], 'newest_first'), jobs_path(toggle_params(:newest_first)), id: "sort-toggle" %>
+        <%# <%= link_to toggle_link_text(params[:order], 'closest_deadline'), jobs_path(toggle_params(:closest_deadline)), id: "deadline-toggle" %>
       </div>
     </div>
   </div>
