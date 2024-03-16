@@ -37,9 +37,7 @@ class Job < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-    scope :newest_first, -> { order(created_at: :desc) }
-    scope :closest_deadline, -> { order(application_deadline: :asc)}
-
+    
   def content(user)
     @address = user.candidate.address
     @summary = user.candidate.summary
