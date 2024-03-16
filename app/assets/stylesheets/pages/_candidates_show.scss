@@ -20,21 +20,25 @@
   display: flex;
   justify-content:flex-start;
   align-items:normal;
+  h1 {
+    padding-top: 50px;
+    padding-left: 30px;
+    color: #695a68;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 2px #695a6852;
+  }
+  img {
+    border-width: 3px;
+    border-style: solid;
+    border-color: #73637231;
+  }
 }
 
-.name-photo h1 {
-  padding-top: 50px;
-  padding-left: 30px;
-  color: #695a68;
-  letter-spacing: 2px;
-  text-shadow: 0px 0px 2px #695a6852;
+#profile {
+  font-size: 13px;
 }
 
-.name-photo img {
-  border-width: 3px;
-  border-style: solid;
-  border-color: #73637231;
-}
+
 
 
 .profile-body {
@@ -59,7 +63,24 @@
 }
 
 .column-card {
-  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  width:450px;
+  color: #695a68;
+  margin: 20px;
+  padding: 20px;
+  background-color: #DDDDDD;
+  box-shadow: 1px 1px 3px #736372;
+
+  p{
+    font-size: 14px;
+    word-break: keep-all;
+    text-align:justify;
+  }
+
+}
+
+.column-card-tags {
   width:450px;
   color: #695a68;
   margin: 20px;

@@ -87,6 +87,8 @@
 .container-card .card-job .box-job .content-job {
   padding: 10px;
   text-align: center;
+  max-height: 250px; /* ajuste conforme necessário */
+  overflow: hidden;
 }
 
 .container-card .card-job .box-job .content-job h3 {

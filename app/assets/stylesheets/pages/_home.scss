@@ -194,20 +194,21 @@
 // banner-bottom
 
 .banner-container {
-  background-color: #9b9b9b;
+  background-image: linear-gradient($aubergine, $darker-green);
   text-align: center;
   padding: 32px 16px;
   bottom: 0;
   width: 100%;
   display: block;
+  border-radius: 5px;
 }
 
 .banner-text {
   font-family: "Titillium Web", sans-serif;
   font-size: 50px;
   font-weight: 300;
+  color: #FFFFFF;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  color: white;
 }
 
 .banner-bottom {
@@ -242,4 +243,5 @@
   background-color: #584c58;
   transition: transform 0.2s;
   transform: scale(1.02);
+
 }

@@ -19,12 +19,6 @@
   margin: 16px;
 }
 
-// .card-gray-bottom:hover {
-//   transition: transform 0.2s;
-//   transform: scale(1.02);
-//   box-shadow: 1px 1px 4px #736372ac;
-// }
-
 .card-product {
   display: flex;
   height: 100%;
@@ -42,6 +36,8 @@
 
 .card-product img {
   width: 200px;
+  min-width: 200px;
+  height:200px;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -69,29 +65,6 @@
   justify-content: space-between;
 }
 
-.bg-tag{
-  background-color: $darker-green;
-  color: $platinum;
-  font-weight: bold;
-  font-size: 14px;
-  box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.5);
-}
-
-.bg-count{
-  border-width: 1px;
-  border-color: $lighter-green;
-  border-style: solid;
-  box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.5);
-  color: $darker-green;
-  font-size: 12px;
-  font-weight: bold;
-  white-space:nowrap;
-}
-
-.bg-count > b {
-  vertical-align: middle;
-}
-
 .card-product-flex {
   background-color: #DDDDDD;
   color: #DDDDDD;
@@ -108,10 +81,9 @@
 
 .card-product-icons {
   display: flex;
-  gap: 20px;
   text-decoration: d-none;
-  font-size: 22px;
-  box-shadow: 1px 1px 2px;
+  font-size: 18px;
+  gap: 24px;
 
   i{
     color: $aubergine;
@@ -134,65 +106,75 @@
 // matches do candidate
 
 .card-matches-container {
-  display: grid;
-  grid-template-columns: 5fr;
-  gap: 20px;
-  margin: 0 auto;
-  max-width: 700px;
-}
-
-.card-match {
+  margin: auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 8px;
-  max-width: 700px;
-  box-shadow: 1px 1px 2px #73637278;
-  transition: transform 0.2s;
-  position: relative;
-}
-
-.status {
-  margin-top:10px;
-  width: 100%;
-}
-
-.card-match-actions {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.card-match-actions i {
-  color: #736372;
-  font-size: 22px;
+  gap: 20px;
   justify-content: space-between;
-  margin-inline: 4px;
+  width: 700px;
 }
 
-.card-match-actions a {
-  text-decoration: none;
-}
+// na maior parte, utilizados cards de Jobs
+// .card-match {
+//   display: flex;
+//   flex-direction: column;
+//   border: 1px solid #ccc;
+//   padding: 10px;
+//   border-radius: 8px;
+//   max-width: 700px;
+//   box-shadow: 1px 1px 2px #73637278;
+//   transition: transform 0.2s;
+//   position: relative;
+// }
 
-.card-match-info {
-  display: flex;
-  position:relative;
-}
+// .status {
+//   margin-top:10px;
+//   padding: 20px;
+//   width: 100%;
+// }
 
-.company-logo {
-  width: 100px;
-  height: auto;
-}
+// .card-match-actions {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+// }
 
-.job-details {
-  margin-left: 10px;
-  flex: 1;
-}
+// .card-match-actions i {
+//   color: #736372;
+//   font-size: 22px;
+//   justify-content: space-between;
+//   margin-inline: 4px;
+// }
+
+// .card-match-actions a {
+//   text-decoration: none;
+// }
+
+// .card-match-info {
+//   display: flex;
+//   position:relative;
+// }
+
+// .company-logo {
+//   width: 100px;
+//   height: auto;
+// }
+
+// .job-details {
+//   margin-left: 10px;
+//   flex: 1;
+// }
 
 .progress {
-  font-size: 16px;
+  height: 36px;
+  width:100%;
   color: #fff;
+
+  p{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 8px;
+   }
 }
 
 //elementos que estão no profile de candidate (por enquanto)
@@ -271,6 +253,7 @@
   transition: box-shadow 0.3s;
 }
 
+
 .searchbar-jobs i {
   color: #757575;
 }
@@ -285,7 +268,6 @@
   background:transparent;
   width: 400px;
 }
-
 // matches do job, que aparecem para a company
 
 .card-matches-job-container {

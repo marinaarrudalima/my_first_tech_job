@@ -6,13 +6,14 @@
       <div class="carddeadline mb-4"><strong>Application deadline:</strong> <%= @job.application_deadline.strftime('%d %b %Y') %></div>
     </div>
 
-    <% if current_user.role_candidate? %>
+    <%# #não está funcionando por aqui o "if current_user.role_candidate? ou o abaixo. Travei aqui pra poder fazer outras coisas. ass: Be" %>
+    <%# <% if current_user && current_user.role_company != nil %>
       <div class="right-column">
         <div>
           <p><%= raw @content %></p>
         </div>
       </div>
-    <% end %>
+    <%# end %>
   </div>
 
 
@@ -35,7 +36,7 @@
         <div class="content-job">
           <h3 class="title-job mb-3"><strong>Tech Languages:</strong></h3>
           <% @job.programming_languages.each do |item| %>
-            <p><%= item %></p>
+           <p><%= item %></p>
           <% end %>
         </div>
       </div>
