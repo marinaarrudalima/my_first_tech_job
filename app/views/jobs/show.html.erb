@@ -6,7 +6,8 @@
       <div class="carddeadline mb-4"><strong>Application deadline:</strong> <%= @job.application_deadline.strftime('%d %b %Y') %></div>
     </div>
 
-    <% if current_user.role_candidate? %>
+    <%# #não estava funcionando com "if current_user.role_candidate? apenas" %>
+    <% if current_user && current_user.role_company != nil %>
       <div class="right-column">
         <div>
           <p><%= raw @content %></p>
