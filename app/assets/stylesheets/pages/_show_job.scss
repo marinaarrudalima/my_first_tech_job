@@ -40,6 +40,42 @@
   font-family: "Titillium Web", sans-serif;
 }
 
+//CARD DEADLINE
+
+.carddeadline {
+  background:#73637271;
+  width: fit-content;
+  padding: 10px;
+  color: black;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+// CARD JOB DESCRIPTION
+
+.job-description-card {
+  background-color: $darker-green;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.job-description-card strong {
+  font-weight: bold;
+}
+
+.job-description-card h5 {
+  text-align: center;
+
+}
+
+.job-description-card p {
+  font-size: 18px;
+  color: #202020;
+  font-weight: 500;
+}
+
 // CARDS
 
 .container-card {
@@ -87,7 +123,7 @@
 .container-card .card-job .box-job .content-job {
   padding: 10px;
   text-align: center;
-  max-height: 250px; /* ajuste conforme necessário */
+  max-height: 250px;
   overflow: hidden;
 }
 
@@ -111,11 +147,14 @@
   color: #fff;
 }
 
+
 //button
+
 .btn-apply {
   font-family: "Titillium Web", sans-serif;
   font-size: 18px;
-  line-height: 1.6em;
+  line-height: 1.8rem;
+  font-weight: bold;
   letter-spacing: 1.2px;
   text-decoration: none;
   fill: #FFFFFF;
@@ -124,7 +163,7 @@
   border-style: solid;
   border-width: 3px 3px 3px 3px;
   border-color: #444444;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 15px 30px;
   display: inline-flex;
   align-items: center;
@@ -139,10 +178,8 @@
   transform: scale(1.02);
 }
 
-.carddeadline {
-  background:#73637271;
-  width: fit-content;
-  padding: 10px;
-  color: black;
-  border-radius: 4px;
+@media screen and (min-width: 768px) {
+  .container-name-company {
+    grid-template-columns: 2fr 2fr;
+  }
 }
