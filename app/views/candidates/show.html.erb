@@ -8,7 +8,11 @@
     <% end %>
     <h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
     </div>
-    <p>Age <strong><%= ((Time.zone.now - @candidate.birth_date.to_time) / 1.year.seconds).floor %></strong><br>From: <strong><%= @candidate.nationality %></strong></p>
+    <p id="profile">
+    Based in <strong><%= @candidate.address %></strong><br>
+    From <strong><%= @candidate.nationality %></strong><br>
+    Age <strong><%= ((Time.zone.now - @candidate.birth_date.to_time) / 1.year.seconds).floor %></strong>
+    </p>
 
     <% if current_user.candidate == @candidate %>
       <%= link_to "Edit your profile", edit_candidate_path, class: "btn-profile" %>
@@ -19,11 +23,11 @@
     <div class="body-column">
     <h4> &lt;/&gt; Basic Information</h4>
       <div class ="column-card">
-        <strong>Summary</strong><br><br>
-        <%= @candidate.summary %>
+        <h5><strong>Summary</strong></h5><br>
+        <p><%= simple_format(@candidate.summary) %></p>
       </div>
       <div class ="column-card">
-        <strong>Resumé</strong><br><br>
+         <h5><strong>Resumé</strong></h5><br>
         <% if @candidate.cv_upload.attached?  %>
           <%= link_to 'Check CV', rails_blob_url(@candidate.cv_upload, disposition: "attachment"), target: "_blank", class: "btn-dark" %>
         <% else %>
@@ -35,13 +39,13 @@
     <div class="column-intro">
       <h4> &lt;/ &gt; Skills</h4>
     </div>
-      <div class="column-card">
+      <div class="column-card-tags">
         <b>Looking for opportunities in...</b><br><br>
         <% @candidate.tech_interest.each do |i|%>
           <p class="bg-tag rounded-pill d-inline-block px-3 py-1"><%= i %></p>
         <% end %>
       </div>
-      <div class ="column-card">
+      <div class ="column-card-tags">
         <b>Interest in the following programming languages:</b><br><br>
         <% @candidate.tech_languages.each do |i| %>
           <p class="bg-tag rounded-pill d-inline-block px-3 py-1"><%= i %></p>
