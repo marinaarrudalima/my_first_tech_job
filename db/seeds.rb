@@ -20,7 +20,6 @@ stripe_user = User.create!(email: 'stripe@gmail.com', password: 'password', role
 apple_user = User.create!(email: 'apple@gmail.com', password: 'password', role: :role_company)
 deel_user = User.create!(email: 'deel@gmail.com', password: 'password', role: :role_company)
 
-
 # Create companies
 airbnb_company = Company.new(
   name: 'Airbnb',
@@ -59,31 +58,34 @@ stripe_company = Company.new(
 )
 
 file = URI.open("https://cdn.icon-icons.com/icons2/2699/PNG/512/stripe_logo_icon_167962.png")
-stripe_company.logo.attach(io: file, filename: "klarna.png", content_type: "image/png")
+stripe_company.logo.attach(io: file, filename: "stripe.png", content_type: "image/png")
 stripe_company.save!
 
+apple_company = Company.new(
+  name: 'Apple Inc.',
+  headquarters: 'Cupertino, California, United States',
+  industry: 'Technology',
+  description: "Apple Inc. is a multinational technology company headquartered in Cupertino, California. Renowned for its innovative products and services, Apple designs, develops, and sells consumer electronics, software, and online services. Best known for iconic products such as the iPhone, iPad, Mac, and Apple Watch, the company is committed to delivering cutting-edge technology and exceptional user experiences.",
+  contact_info: 'https://support.apple.com/.',
+  user: apple_user
+)
 
-# # Create companies
-# company = Company.create!(
-#   name: 'Apple Inc.',
-#   headquarters: 'Cupertino, California, United States',
-#   industry: 'Technology',
-#   description: 'A description of the company',
-#   contact_info: 'https://support.apple.com/.',
-#   user_id: User.first.id # Assigning the first user as the owner of the company, you may need to adjust this
-# )
+file = URI.open("https://media.designrush.com/inspiration_images/134802/conversions/_1511456315_653_apple-mobile.jpg")
+apple_company.logo.attach(io: file, filename: "apple.png", content_type: "image/png")
+apple_company.save!
 
-# # Create companies
-# company = Company.create!(
-#   name: 'Deel',
-#   headquarters: 'San Francisco, California, United States',
-#   industry: 'Human Resources, Fintech',
-#   description: 'Deel is a global payroll and compliance platform for remote teams. It provides solutions for companies to hire, manage, and pay remote employees and contractors worldwide, handling compliance, taxes, and international payments.',
-#   contact_info: 'https://www.letsdeel.com/',
-#   user_id: User.first.id # Assigning the first user as the owner of the company, you may need to adjust this
-# )
+deel_company = Company.new(
+  name: 'Deel',
+  headquarters: 'San Francisco, California, United States',
+  industry: 'Human Resources, Fintech',
+  description: 'Deel is a global payroll and compliance platform for remote teams. It provides solutions for companies to hire, manage, and pay remote employees and contractors worldwide, handling compliance, taxes, and international payments.',
+  contact_info: 'https://www.letsdeel.com/',
+  user: deel_user
+)
 
-
+file = URI.open("https://assets.ellaa.app/deel-logo.png")
+deel_company.logo.attach(io: file, filename: "deel.png", content_type: "image/png")
+deel_company.save!
 
 # Create candidates
 candidate = Candidate.new(
@@ -106,69 +108,82 @@ candidate.photo.attach(io: file, filename: "john_doe.png", content_type: "image/
 candidate.save!
 
 
-# candidate = Candidate.create!(
-#   first_name: 'Emily',
-#   last_name: 'Smith',
-#   address: '456 Oak St, Toronto, Canada',
-#   nationality: 'Canadian',
-#   gender: 'Female',
-#   photo: 'emily_photo.jpg', # You may need to adjust this to an actual photo file
-#   summary: 'My name is David, and I recently completed an intensive coding bootcamp. Through the bootcamp, I gained foundational skills in web development, including HTML, CSS, JavaScript, and React. Before transitioning into tech, I worked in a non-technical role in marketing. However, I discovered my passion for technology and decided to pursue a career change. I/m highly motivated, eager to learn, and excited about the prospect of starting a new career as a software developer or UX/UI designer.',
-#   tech_interest: ['Web Development', 'UX/UI'],
-#   tech_languages: ['JavaScript', 'React'],
-#   preferred_companies: 'Airbnb, Figma',
-#   cv_upload: 'emily_cv.pdf', # You may need to adjust this to an actual CV file
-#   user_id: User.first.id,
-#   birth_date: Date.new(1990, 4, 9),
-#   terms_conditions: true
+candidate = Candidate.new(
+  first_name: 'Emily',
+  last_name: 'Smith',
+  address: '456 Oak St, Toronto, Canada',
+  nationality: 'Canadian',
+  gender: 'Female',
+  summary: "I recently completed an intensive coding bootcamp. Through the bootcamp, I gained foundational skills in web development, including HTML, CSS, JavaScript, and React. Before transitioning into tech, I worked in a non-technical role in marketing. However, I discovered my passion for technology and decided to pursue a career change. I/m highly motivated, eager to learn, and excited about the prospect of starting a new career as a software developer or UX/UI designer.",
+  tech_interest: ['Front-end Development', 'UX/UI Design'],
+  tech_languages: ['JavaScript', 'TypeScript'],
+  preferred_companies: 'Airbnb, Figma',
+  user: emily_smith,
+  birth_date: Date.new(1990, 4, 9),
+  terms_conditions: true
+)
 
-# candidate = Candidate.create!(
-#   first_name: 'Alexander',
-#   last_name: 'Wang',
-#   address: '789 Elm St, Beijing, China',
-#   nationality: 'American',
-#   gender: 'Male',
-#   photo: 'alexander_photo.jpg', # You may need to adjust this to an actual photo file
-#   summary: 'My name is Alexander, and I/m a self-taught individual passionate about technology. With a background in finance and investment analysis, I/ve spent several years working in the financial sector, analyzing market trends and evaluating investment opportunities. However, my curiosity and interest in technology led me to explore coding and web development in my free time. Through self-directed learning and online resources, I/ve acquired proficiency in languages such as HTML, CSS, JavaScript, and Python. I/ve also developed projects independently, including websites and small applications, to further hone my skills. ',
-#   tech_interest: ['Mobile Development', 'Web Development'],
-#   tech_languages: ['Python', 'JavaScript'],
-#   preferred_companies: 'Klarna, Stripe',
-#   cv_upload: 'alexander_cv.pdf', # You may need to adjust this to an actual CV file
-#   user_id: User.first.id,
-#   birth_date: Date.new(1989, 2, 15),
-#   terms_conditions: true
+file = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+candidate.photo.attach(io: file, filename: "emily_smith.png", content_type: "image/png")
+candidate.save!
 
-# candidate = Candidate.create!(
-#   first_name: 'Jennifer',
-#   last_name: 'White',
-#   address: '567 Pine St, London, UK',
-#   nationality: 'British',
-#   gender: 'Female',
-#   photo: 'jennifer_photo.jpg', # You may need to adjust this to an actual photo file
-#   summary: 'My name is Emily, and I/m a recent graduate with a degree in Computer Science, eager to kickstart my career in the tech industry. Throughout my studies, I developed a strong foundation in programming languages, algorithms, and software development methodologies.  I have knowledge in web development, having studied HTML, CSS, and JavaScript. Now, I/m actively seeking product manager roles within the tech industry, where I can leverage my technical background, design skills, and understanding of web development to drive product innovation and success.',
-#   tech_interest: ['Product Management'],
-#   tech_languages: ['JavaScript'],
-#   preferred_companies: 'EY Consulting, Cisco',
-#   cv_upload: 'jennifer_cv.pdf', # You may need to adjust this to an actual CV file
-#   user_id: User.first.id,
-#   birth_date: Date.new(2001, 12, 21),
-#   terms_conditions: true
+candidate = Candidate.new(
+  first_name: 'Alexander',
+  last_name: 'Wang',
+  address: '789 Elm St, Beijing, China',
+  nationality: 'American',
+  gender: 'Male',
+  summary: "My name is Alexander, and I'm a self-taught individual passionate about technology. With a background in finance and investment analysis, I've spent several years working in the financial sector, analyzing market trends and evaluating investment opportunities. However, my curiosity and interest in technology led me to explore coding and web development in my free time. Through self-directed learning and online resources, I've acquired proficiency in languages such as HTML, CSS, JavaScript, and Python. I've also developed projects independently, including websites and small applications, to further hone my skills.",
+  tech_interest: ['Mobile App Development', 'Back-end Development'],
+  tech_languages: ['Python', 'JavaScript'],
+  preferred_companies: 'Klarna, Stripe',
+  user: alexander_wang,
+  birth_date: Date.new(1989, 2, 15),
+  terms_conditions: true
+)
 
-# candidate = Candidate.create!(
-#   first_name: 'Gabriel',
-#   last_name: 'Silva',
-#   address: '123 Avenida Brasil, São Paulo, Brazil',
-#   nationality: 'Brazilian',
-#   gender: 'Male',
-#   photo: 'photo.jpg', # You may need to adjust this to an actual photo file
-#   summary: 'I/m a recent Computer Engineering graduate passionate about technology. With expertise in Java, Python, and Go, I/m eager to delve into Cloud Computing and DevOps. Through hands-on projects and coursework, I/ve gained proficiency in software development and hardware projects. I/m now seeking opportunities to apply my skills and interests in a professional setting, contributing to innovative projects within the tech industry.',
-#   tech_interest: ['Cloud Computing', 'DevOps'],
-#   tech_languages: ['Java', 'Python', 'Go'],
-#   preferred_companies: 'Google, Oracle, Microsoft, SalesForce',
-#   cv_upload: 'gabriel_cv.pdf', # You may need to adjust this to an actual CV file
-#   user_id: User.first.id,
-#   birth_date: Date.new(2003, 10, 16),
-#   terms_conditions: true
+  file = URI.open("https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+  candidate.photo.attach(io: file, filename: "alexander_wang.png", content_type: "image/png")
+  candidate.save!
+
+
+candidate = Candidate.new(
+  first_name: 'Jennifer',
+  last_name: 'White',
+  address: '567 Pine St, London, UK',
+  nationality: 'British',
+  gender: 'Female',
+  summary: "My name is Emily, and I'm a recent graduate with a degree in Computer Science, eager to kickstart my career in the tech industry. Throughout my studies, I developed a strong foundation in programming languages, algorithms, and software development methodologies.  I have knowledge in web development, having studied HTML, CSS, and JavaScript. Now, I'm actively seeking product manager roles within the tech industry, where I can leverage my technical background, design skills, and understanding of web development to drive product innovation and success.",
+  tech_interest: ['Product Management'],
+  tech_languages: ['JavaScript'],
+  preferred_companies: 'EY Consulting, Cisco',
+  user: jennifer_white,
+  birth_date: Date.new(2001, 12, 21),
+  terms_conditions: true
+)
+
+  file = URI.open("https://images.unsplash.com/photo-1472849676747-48a51c0c30b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+  candidate.photo.attach(io: file, filename: "jennifer_white.png", content_type: "image/png")
+  candidate.save!
+
+candidate = Candidate.new(
+  first_name: 'Gabriel',
+  last_name: 'Silva',
+  address: '123 Avenida Brasil, São Paulo, Brazil',
+  nationality: 'Brazilian',
+  gender: 'Male',
+  summary: "I'm a recent Computer Engineering graduate passionate about technology. With expertise in Java, Python, and Go, I'm eager to delve into Cloud Computing and DevOps. Through hands-on projects and coursework, I've gained proficiency in software development and hardware projects. I'm now seeking opportunities to apply my skills and interests in a professional setting, contributing to innovative projects within the tech industry.",
+  tech_interest: ['Cloud Computing', 'DevOps & SysOps'],
+  tech_languages: ['Java', 'Python', 'Go'],
+  preferred_companies: 'Google, Oracle, Microsoft, SalesForce',
+  user: gabriel_silva,
+  birth_date: Date.new(2003, 10, 16),
+  terms_conditions: true
+)
+
+  file = URI.open("https://images.unsplash.com/photo-1541178735493-479c1a27ed24?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+  candidate.photo.attach(io: file, filename: "gabriel_silva.png", content_type: "image/png")
+  candidate.save!
 
 # # Create jobs
 job = Job.create!(
@@ -187,7 +202,7 @@ job = Job.create!(
 
 # job = Job.create!(
 #   title: 'Associate Software Engineer',
-#   job_description: 'We/re seeking an Associate Software Engineer to join our growing team. In this role, you/ll assist in developing and maintaining software applications, working alongside experienced engineers to learn and grow your skills.',
+#   job_description: "We're seeking an Associate Software Engineer to join our growing team. In this role, you'll assist in developing and maintaining software applications, working alongside experienced engineers to learn and grow your skills.",
 #   soft_skills: 'Problem-solving, adaptability',
 #   programming_languages: 'Java, Python',
 #   work_visa: 'Sponsorship not available',
