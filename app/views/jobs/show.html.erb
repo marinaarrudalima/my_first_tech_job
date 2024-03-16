@@ -17,8 +17,8 @@
   </div>
 
 
-  <div>
-    <p class="description mt-5"><strong>Job Description:</strong> <%= @job.job_description %></p>
+  <div class="job-description-card mt-5">
+    <h5><strong>Job Description:</strong><h5> <p><%= @job.job_description %></p>
   </div>
 
   <div class="container-card d-flex justify-content-center ">
@@ -45,7 +45,7 @@
     <div class="card-job">
       <div class="box-job">
         <div class="content-job">
-          <h3 class="title-job mb-3"><strong>Benefits:</strong></h3>
+          <h3 class="title-job mb-3"><strong>Salary/Benefits:</strong></h3>
           <p><strong>Salary:</strong> <%= @job.salary %></p>
           <p><strong>Work Visa:</strong> <%= @job.work_visa %></p>
           <p><%= @job.benefits %></p>
