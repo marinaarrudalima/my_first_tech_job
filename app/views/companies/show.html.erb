@@ -5,7 +5,7 @@
       <h1><%= @company.name %></h1>
     </div>
     <p>Located in <strong><%= @company.headquarters %></strong></p>
-    <% if current_user.company == @company %>
+    <% if current_user == @company %>
       <%= link_to "Edit your profile", edit_company_path, class: "btn-profile" %>
     <% end %>
   </div>
