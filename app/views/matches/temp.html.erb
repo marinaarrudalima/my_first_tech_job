@@ -23,41 +23,41 @@
                      <% end %>
                     </div>
                   </div>
-                  <div class="progress">
+                  <div class="progress" style="height: 23px;width:100%">
                   <% if match.status == "Submitted" %>
                     <div class="progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
-                      <p>Submitted</p>
+                      Submitted
                     </div>
                   <% elsif match.status == "Review" %>
                     <div class="progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
                     aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
-                      <p>Review</p>
+                      Review
                     </div>
                   <% elsif match.status == "First_interview" %>
                     <div class="progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                      <p>First Interview</p>
+                      First Interview
                     </div>
                   <% elsif match.status == "Second_interview" %>
                     <div class="progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                      <p>Second Interview</p>
+                      Second Interview
                     </div>
                   <% elsif match.status == "Job_offer" %>
                     <div class="progress-bar-striped progress-bar-animated bg-success" role="progressbar"
                     aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                      <p>Job Offer!</p>
+                      Job Offer!
                     </div>
                   <% elsif match.status == "Onboarded" %>
                     <div class="progress-bar-striped progress-bar-animated bg-success" role="progressbar"
                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                      <p>Onboarded!</p>
+                      Onboarded!
                     </div>
                   <% elsif match.status == "Rejected" %>
                     <div class="progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
-                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100% p-">
-                      <p>Rejected</p>
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                      Rejected
                   <% end %>
                   </div>
                   <div class="d-flex justify-content-between w-100">
