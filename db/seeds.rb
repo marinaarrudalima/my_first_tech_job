@@ -78,7 +78,7 @@ deel_company = Company.new(
   name: 'Deel',
   headquarters: 'San Francisco, California, United States',
   industry: 'Human Resources, Fintech',
-  description: 'Deel is a global payroll and compliance platform for remote teams. It provides solutions for companies to hire, manage, and pay remote employees and contractors worldwide, handling compliance, taxes, and international payments.',
+  description: "Deel is a global payroll and compliance platform for remote teams. It provides solutions for companies to hire, manage, and pay remote employees and contractors worldwide, handling compliance, taxes, and international payments.",
   contact_info: 'https://www.letsdeel.com/',
   user: deel_user
 )
@@ -190,9 +190,9 @@ job = Job.create!(
   title: 'Junior Frontend Developer',
   job_description: "Join our team as a Junior Frontend Developer, where you'll assist in building responsive and user-friendly web applications. You'll work closely with our frontend team to implement designs and enhance user experiences.",
   soft_skills: 'Communication, teamwork',
-  programming_languages: ['HTML', 'CSS', 'JavaScript'],
+  programming_languages: ["HTML", "CSS", "JavaScript"],
   work_visa: 'Sponsorship available',
-  salary: '$5.000',
+  salary: '4.000',
   benefits: 'Health insurance, flexible work hours',
   application_deadline: Date.today + 30,
   date_posted: Date.today,
@@ -200,184 +200,135 @@ job = Job.create!(
   company: airbnb_company
 )
 
-# job = Job.create!(
-#   title: 'Associate Software Engineer',
-#   job_description: "We're seeking an Associate Software Engineer to join our growing team. In this role, you'll assist in developing and maintaining software applications, working alongside experienced engineers to learn and grow your skills.",
-#   soft_skills: 'Problem-solving, adaptability',
-#   programming_languages: 'Java, Python',
-#   work_visa: 'Sponsorship not available',
-#   salary: '£3,500',
-#   benefits: 'Retirement plan, professional development opportunities',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location: 'London, UK / Hybrid',
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Entry-level Software Engineer',
+  job_description: "We're seeking an Associate Software Engineer to join our growing team. In this role, you'll assist in developing and maintaining software applications, working alongside experienced engineers to learn and grow your skills.",
+  soft_skills: 'Problem-solving, adaptability, time management',
+  programming_languages: ["Java", "Python", "JavaScript"],
+  work_visa: 'Sponsorship not available',
+  salary: '4,500',
+  benefits: 'Health insurance, paid time off, professional development',
+  application_deadline: Date.today + 30,
+  date_posted: Date.today,
+  location: 'Stockholm, Sweden / Hybrid',
+  company: klarna_company
+)
 
-# job = Job.create!(
-#   title: 'Entry-Level Backend Developer',
-#   job_description: 'Exciting opportunity for an Entry-Level Backend Developer to join our team. You/ll work on backend systems, writing clean and efficient code to support our applications and services.',
-#   soft_skills: 'Collaboration, attention to detail',
-#   programming_languages: 'Ruby, SQL',
-#   work_visa: 'Sponsorship available',
-#   salary: '€3,000',
-#   benefits: 'Health insurance, gym membership subsidy',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location: 'Berlin, Germany',
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Junior Web Developer',
+  job_description: "Support the creation and maintenance of web applications, assist in troubleshooting and debugging issues, and collaborate with cross-functional teams.",
+  soft_skills: "Adaptability, initiative, attention to detail",
+  programming_languages: ["HTML", "CSS", "JavaScript"],
+  work_visa: 'Sponsorship available',
+  salary: '3,500',
+  benefits: 'Fully remote (work from anywhere), career development workshops',
+  application_deadline: Date.today + 30,
+  date_posted: Date.today,
+  location: 'Remote',
+  company: deel_company
+)
 
-# job = Job.create!(
-#   title: 'Software Development Intern',
-#   job_description: 'Kickstart your career with our Software Development Internship program. You/ll work closely with our engineering team, gaining hands-on experience in software development while contributing to real projects.',
-#   soft_skills: 'Initiative, willingness to learn',
-#   programming_languages: 'JavaScript, PHP',
-#   work_visa: 'Sponsorship not available',
-#   salary: 'CAD 2,500',
-#   benefits: 'Mentorship program, networking opportunities',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location:'Toronto, Canada',
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Associate Product Manager',
+  job_description: "Assist in product development activities, conduct market research, gather and analyze user feedback, and contribute to product roadmap planning.",
+  soft_skills: 'Analytical thinking, communication, leadership potential',
+  programming_languages: ["JavaScript", "Python"],
+  work_visa: 'Sponsorship not available',
+  salary: '4,000',
+  benefits: "Equity options, mentorship program, flexible work environment.",
+  application_deadline: Date.today + 30,
+  date_posted: Date.today,
+  location:'Toronto, Canada',
+  company: apple_company
+)
 
-# job = Job.create!(
-#   title: 'Junior Full Stack Developer',
-#   job_description: 'We/re hiring a Junior Full Stack Developer to join our dynamic team. You/ll work on both frontend and backend development, collaborating with cross-functional teams to deliver high-quality software solutions.',
-#   soft_skills: 'Problem-solving, teamwork',
-#   programming_languages: 'JavaScript, Python',
-#   work_visa: 'Sponsorship available',
-#   salary: 'AUD 6,000',
-#   benefits: 'Health insurance, flexible work environment',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location: 'Sydney, Australia'
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Junior Software Developer',
+  job_description: "Contribute to the design and implementation of software solutions, collaborate with senior developers, and participate in code reviews and testing.",
+  soft_skills: 'Eagerness to learn, teamwork, problem-solving.',
+  programming_languages: ["Java", "Python", "JavaScript"],
+  work_visa: 'Sponsorship available',
+  salary: '4,200',
+  benefits: 'Professional development budget, gym membership subsidy',
+  application_deadline: Date.today + 30,
+  date_posted: Date.today,
+  location: 'London, UK / Remote',
+  company: stripe_company
+)
 
-# job = Job.create!(
-#   title: 'Associate Web Developer',
-#   job_description: 'Description of the job',
-#   soft_skills: 'Communication, teamwork',
-#   programming_languages: 'Ruby, JavaScript',
-#   work_visa: 'Sponsorship available',
-#   salary: 'R$4,000',
-#   benefits: 'Health insurance, retirement plan',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location: 'São Paulo, Brazil'
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Entry-level Data Analyst',
+  job_description: "Assist in collecting and analyzing data, generate reports and visualizations, and support data-driven decision-making processes.",
+  soft_skills: 'Attention to detail, analytical mindset, strong numerical skills.',
+  programming_languages: ["SQL", "Python", "R"],
+  work_visa: 'Sponsorship not available',
+  salary: '3,800',
+  benefits: 'Remote work opportunities, continuous learning resources',
+  application_deadline: Date.today + 40,
+  date_posted: Date.today,
+  location: 'Berlin, Germany / Hybrid',
+  company: airbnb_company
+)
 
-# job = Job.create!(
-#   title: 'Software Engineering Trainee',
-#   job_description: 'Join our Software Engineering Trainee program and gain valuable experience in software development. You/ll receive mentorship from experienced engineers and work on real-world projects to enhance your skills.',
-#   soft_skills: 'Communication, teamwork',
-#   programming_languages: 'Ruby, JavaScript',
-#   work_visa: 'Sponsorship available',
-#   salary: '¥200,000',
-#   benefits: 'Health insurance, retirement plan',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location:'Tokyo, Japan'
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Junior Mobile App Developer',
+  job_description: "Assist in the development and maintenance of mobile applications, participate in code reviews, and troubleshoot issues.",
+  soft_skills: 'Adaptability, creativity, teamwork',
+  programming_languages: ["Swift", "Kotlin", "Java"],
+  work_visa: 'Sponsorship not available',
+  salary: '4,000',
+  benefits: 'Paid parental leave, stock options, company-sponsored events',
+  application_deadline: Date.today + 45,
+  date_posted: Date.today,
+  location:'Stockholm, Sweden',
+  company: klarna_company
+)
 
-# job = Job.create!(
-#   title: 'Software Engineer',
-#   job_description: 'Description of the job',
-#   soft_skills: 'Communication, teamwork',
-#   programming_languages: 'Ruby, JavaScript',
-#   work_visa: 'Sponsorship available',
-#   salary: 80000.00,
-#   benefits: 'Health insurance, retirement plan',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location:
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Entry-level Quality Assurance (QA) Engineer',
+  job_description: "Execute test plans, identify and report bugs, and work closely with development teams to ensure product quality.",
+  soft_skills: 'Attention to detail, critical thinking, communication.',
+  programming_languages: ["Python", "JavaScript"],
+  work_visa: 'Sponsorship available',
+  salary: '3,500',
+  benefits: 'Fully remote (work from anywhere), career development workshops',
+  application_deadline: Date.today + 30,
+  date_posted: Date.today,
+  location: 'Remote',
+  company: deel_company
+)
 
-# job = Job.create!(
-#   title: 'Software Engineer',
-#   job_description: 'Description of the job',
-#   soft_skills: 'Communication, teamwork',
-#   programming_languages: 'Ruby, JavaScript',
-#   work_visa: 'Sponsorship available',
-#   salary: 80000.00,
-#   benefits: 'Health insurance, retirement plan',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location:
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Junior DevOps Engineer',
+  job_description: "Support continuous integration and deployment processes, automate infrastructure tasks, and assist in monitoring system performance.",
+  soft_skills: 'Problem-solving, collaboration, willingness to learn new technologies.',
+  programming_languages: ["Python", "Go", "Shell Scripting"],
+  work_visa: 'Sponsorship available',
+  salary: '4,200',
+  benefits: 'Remote work options, professional development',
+  application_deadline: Date.today + 30,
+  date_posted: Date.today,
+  location: 'São Paulo, Brazil / Remote',
+  company: stripe_company
+)
 
-# job = Job.create!(
-#   title: 'Software Engineer',
-#   job_description: 'Description of the job',
-#   soft_skills: 'Communication, teamwork',
-#   programming_languages: 'Ruby, JavaScript',
-#   work_visa: 'Sponsorship available',
-#   salary: 80000.00,
-#   benefits: 'Health insurance, retirement plan',
-#   application_deadline: Date.today + 30,
-#   date_posted: Date.today,
-#   location:
-#   company_id: company.id
-# )
+job = Job.create!(
+  title: 'Entry-level UX/UI Designer',
+  job_description: "Assist in designing user interfaces and experiences, create wireframes and prototypes, and collaborate with development teams",
+  soft_skills: 'Creativity, empathy, attention to detail',
+  programming_languages: ["HTML", "CSS", "JavaScript"],
+  work_visa: 'Sponsorship not available',
+  salary: '3,800',
+  benefits: 'Ongoing training opportunities, company-wide hackathons',
+  application_deadline: Date.today + 60,
+  date_posted: Date.today,
+  location:'Beijing, China / Hybrid',
+  company: apple_company
+)
 
 # # Create matches
 # Match.create!(
 #   status: 0,
 #   candidate_id: candidate.id,
 #   job_id: job.id
-# )
-
-
-
-# # image = ActionController::Base.helpers.asset_path("ganza.jpg")
-# image = File.open(Rails.root.join('app', 'assets', 'images', 'ganza.jpg'))
-# puts "esta é a #{image}"
-
-# user = User.create!(email: "jane.doe@mail.com", password: "123123", role: "role_candidate")
-# Candidate.create!(
-#   first_name: "Jane",
-#   last_name: "Doe",
-#   address: "123 Main St, Anytown, USA",
-#   nationality: "American",
-#   gender: "Female",
-#   birth_date: Date.new(1990, 3, 1),
-#   photo: nil,
-#   summary: "A passionate developer...",
-#   tech_interest: "Web development",
-#   tech_languages: "Ruby, JavaScript",
-#   preferred_companies: "GitHub, Google",
-#   cv_upload: nil,
-#   terms_conditions: "true",
-#   user: user
-# )
-
-# user_two = User.create!(email: "company@mail.com", password: "123123", role: "role_company")
-# company = Company.create!(
-#   name: "company",
-#   headquarters: "SP",
-#   industry: "Tech",
-#   description: "very nice",
-#   contact_info: "url",
-#   user: user_two
-# )
-
-# Job.create!(
-#   title: "Software Engineer",
-#   job_description: "Great experience for newbies",
-#   soft_skills: "Communication",
-#   programming_languages: "Ruby",
-#   work_visa: "sure",
-#   salary: 1000.0,
-#   benefits: "some",
-#   application_deadline: Date.new(2024, 3, 28),
-#   date_posted: Date.today,
-#   location: 'São Paulo',
-#   company: company,
-#   status: 0
 # )
