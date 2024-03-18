@@ -7,7 +7,7 @@
         <%= @job.company.name %>
       <% end %>
       </p>
-      <div class="carddeadline"><strong>Application deadline:</strong> <%= @job.application_deadline.strftime('%d %b %Y') %></div>
+      <div class="carddeadline" ><strong>Application deadline:</strong> <%= @job.application_deadline.strftime('%d %b %Y') %></div>
   </div>
     <% if current_user.role_candidate? %>
       <div class="compability-card">

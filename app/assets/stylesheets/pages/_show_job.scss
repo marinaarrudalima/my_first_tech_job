@@ -23,6 +23,7 @@
 .job-flex {
   display:flex;
   gap:20px;
+  justify-content:center;
 }
 
 .green-banner {
@@ -95,7 +96,6 @@
 }
 
 .job-description-card h4 {
-  margin-left: 20px;
   margin-top:10px;
   background-color: #736372;
   width: fit-content;
@@ -151,6 +151,7 @@
   flex-wrap: wrap;
   color: #464646;
   margin:auto;
+  transition: 0.2s;
 }
 
 .container-card .card-job {
@@ -210,7 +211,8 @@
 
 .container-card .card-job:hover .box-job .content-job h3,
 .container-card .card-job:hover .box-job .content-job p {
-  color: #464646;
+  color: $platinum;
+  transition: 0.2s;
 }
 
 
