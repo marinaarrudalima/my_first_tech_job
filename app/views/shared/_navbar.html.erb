@@ -20,23 +20,21 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <% if current_user.company != nil  %>
+            <% if current_user.company != nil  && current_user.company.logo.attached? %>
               <%= cl_image_tag current_user.company.logo.key, crop: :fill, class: "avatar", alt: "dropdown menu" %>
             <% elsif current_user.candidate != nil && current_user.candidate.photo.attached? %>
               <%= cl_image_tag current_user.candidate.photo.key, gravity: :face, class: "avatar", alt: "dropdown menu" %>
-            <% elsif current_user.candidate != nil %>
-              <%= image_tag "blank-profile-picture.png", class: "avatar", alt: "dropdown menu" %>
             <% else %>
               <%= image_tag "blank-profile-picture.png", class: "avatar", alt: "dropdown menu" %>
             <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <% if current_user.company != nil  %>
+            <% if current_user.company.present? && current_user.company.persisted? %>
               <%= link_to "My Jobs", "/jobs/my_jobs", class: "dropdown-item" %>
               <%= link_to "Company's Profile", company_path(current_user.company), class: "dropdown-item" %>
               <%= link_to "Create Job", "/jobs/new", class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_company_path(current_user.company), class: "dropdown-item" %>
-            <% elsif current_user.candidate != nil   %>
+            <% elsif current_user.candidate.present? && current_user.candidate.persisted? %>
               <%= link_to "My Applications", my_matches_path, class: "dropdown-item" %>
               <%= link_to "My Profile", candidate_path(current_user.candidate), class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_candidate_path(current_user.candidate), class: "dropdown-item" %>
