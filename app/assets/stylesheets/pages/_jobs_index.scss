@@ -83,3 +83,11 @@ input:checked + .slider:before {
   display:flex;
   justify-content:center;
 }
+
+/* minor info - são as infos de deadline e location no bottom do card*/
+
+.minor-info{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
