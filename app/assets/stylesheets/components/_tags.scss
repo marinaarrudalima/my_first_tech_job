@@ -6,6 +6,17 @@
   box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
+.bg-tag-side{
+  background-color: $darker-green;
+  color: $platinum;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.5);
+  padding: 4px 8px;
+  width:fit-content;
+}
+
 .bg-count{
   border-width: 1px;
   border-color: $lighter-green;

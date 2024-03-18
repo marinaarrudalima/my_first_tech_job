@@ -30,3 +30,12 @@
   object-fit: cover;
   object-position: center;
 }
+
+.avatar-profile-small {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 5px solid #ffffffc9;
+}

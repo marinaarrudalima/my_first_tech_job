@@ -166,6 +166,7 @@
 // }
 
 .progress {
+
   height: 36px;
   width:100%;
   color: #fff;
@@ -270,75 +271,13 @@
 }
 // matches do job, que aparecem para a company
 
-.card-matches-job-container {
-  display: grid;
-  grid-template-columns: 5fr;
-  margin-left: 40px;
-  margin-bottom: 20px;
-  gap: 20px;
-  justify-content: start;
-}
 
-.card-match-job {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 8px;
-  max-width: 750px;
-  box-shadow: 1px 1px 2px #73637278;
-  transition: transform 0.2s;
-  position: relative;
-}
 
-.card-match-job-info {
-  display: flex;
-  position:relative;
-}
+// .card-match-job-info {
+//   display: flex;
+//   padding: 12px;
+// }
 
-.candidate-details {
-  padding:6px;
-  margin-left: 10px;
-  flex: 1;
-  color: #736372;
-}
-
-.candidate-details a {
-  color: #736372;
-}
-
-.card-match-job-info img {
-  height: 100%;
-  width: 150px;
-  object-fit: cover;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-right-style: solid;
-  border-right-color: #73637231;
-  border-right-width: 3px;
-}
-
-.match-change {
-  display:flex;
-  align-items: baseline;
-  gap: 5px;
-  color: #736372;
-}
-
-.buttons-match-job{
-  display:grid;
-  gap: 3px;
-  position:absolute;
-  right: 0;
-  bottom: 0;
-}
-
-.doa-match-job {
-  position: absolute;
-  right: 2px;
-  top: 1px;
-  font-size:13px;
-}
 
 //mini-card do show de company
 
