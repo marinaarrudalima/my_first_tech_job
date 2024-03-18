@@ -1,5 +1,5 @@
 class Candidate < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_many :matches
   has_one_attached :photo
   has_one_attached :cv_upload

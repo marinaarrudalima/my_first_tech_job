@@ -1,8 +1,8 @@
 require "open-uri"
 
 
-User.destroy_all
 Candidate.destroy_all
+User.destroy_all
 Company.destroy_all
 Job.destroy_all
 
@@ -12,6 +12,7 @@ emily_smith = User.create!(email: 'emily.smith@gmail.com', password: 'password',
 alexander_wang = User.create!(email: 'alexander.wang@gmail.com', password: 'password', role: :role_candidate)
 jennifer_white = User.create!(email: 'jennifer.white@gmail.com', password: 'password', role: :role_candidate)
 gabriel_silva = User.create!(email: 'gabriel.silva@gmail.com', password: 'password', role: :role_candidate)
+liz_souza = User.create!(email: 'beatriz.assis@gmail.com', password: 'password', role: :role_candidate)
 
 
 airbnb_user = User.create!(email: 'airbnb@gmail.com', password: 'password', role: :role_company)
@@ -91,7 +92,7 @@ deel_company.save!
 candidate = Candidate.new(
   first_name: 'John',
   last_name: 'Doe',
-  address: '123 Main St, New York, USA',
+  address: 'New York, USA',
   nationality: 'United States',
   gender: 'Male',
   summary: "I recently graduated with a Bachelor's degree in Computer Science from Brown University. During my studies, I focused on a variety of programming languages, algorithms, and software development methodologies. I completed several projects, including developing web applications, mobile apps, and machine learning models. I'm eager to apply my knowledge and skills in a professional setting, with a particular interest in software engineering or data science roles within the tech industry.",
@@ -111,7 +112,7 @@ candidate.save!
 candidate = Candidate.new(
   first_name: 'Emily',
   last_name: 'Smith',
-  address: '456 Oak St, Toronto, Canada',
+  address: 'Toronto, Canada',
   nationality: 'Canadian',
   gender: 'Female',
   summary: "I recently completed an intensive coding bootcamp. Through the bootcamp, I gained foundational skills in web development, including HTML, CSS, JavaScript, and React. Before transitioning into tech, I worked in a non-technical role in marketing. However, I discovered my passion for technology and decided to pursue a career change. I/m highly motivated, eager to learn, and excited about the prospect of starting a new career as a software developer or UX/UI designer.",
@@ -130,7 +131,7 @@ candidate.save!
 candidate = Candidate.new(
   first_name: 'Alexander',
   last_name: 'Wang',
-  address: '789 Elm St, Beijing, China',
+  address: 'Beijing, China',
   nationality: 'American',
   gender: 'Male',
   summary: "My name is Alexander, and I'm a self-taught individual passionate about technology. With a background in finance and investment analysis, I've spent several years working in the financial sector, analyzing market trends and evaluating investment opportunities. However, my curiosity and interest in technology led me to explore coding and web development in my free time. Through self-directed learning and online resources, I've acquired proficiency in languages such as HTML, CSS, JavaScript, and Python. I've also developed projects independently, including websites and small applications, to further hone my skills.",
@@ -150,7 +151,7 @@ candidate = Candidate.new(
 candidate = Candidate.new(
   first_name: 'Jennifer',
   last_name: 'White',
-  address: '567 Pine St, London, UK',
+  address: 'London, UK',
   nationality: 'British',
   gender: 'Female',
   summary: "My name is Emily, and I'm a recent graduate with a degree in Computer Science, eager to kickstart my career in the tech industry. Throughout my studies, I developed a strong foundation in programming languages, algorithms, and software development methodologies.  I have knowledge in web development, having studied HTML, CSS, and JavaScript. Now, I'm actively seeking product manager roles within the tech industry, where I can leverage my technical background, design skills, and understanding of web development to drive product innovation and success.",
@@ -169,7 +170,7 @@ candidate = Candidate.new(
 candidate = Candidate.new(
   first_name: 'Gabriel',
   last_name: 'Silva',
-  address: '123 Avenida Brasil, São Paulo, Brazil',
+  address: 'São Paulo, Brazil',
   nationality: 'Brazilian',
   gender: 'Male',
   summary: "I'm a recent Computer Engineering graduate passionate about technology. With expertise in Java, Python, and Go, I'm eager to delve into Cloud Computing and DevOps. Through hands-on projects and coursework, I've gained proficiency in software development and hardware projects. I'm now seeking opportunities to apply my skills and interests in a professional setting, contributing to innovative projects within the tech industry.",
@@ -177,13 +178,34 @@ candidate = Candidate.new(
   tech_languages: ['Java', 'Python', 'Go'],
   preferred_companies: 'Google, Oracle, Microsoft, SalesForce',
   user: gabriel_silva,
-  birth_date: Date.new(2003, 10, 16),
+  birth_date: Date.new(2001, 10, 16),
   terms_conditions: true
 )
 
   file = URI.open("https://images.unsplash.com/photo-1541178735493-479c1a27ed24?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
   candidate.photo.attach(io: file, filename: "gabriel_silva.png", content_type: "image/png")
   candidate.save!
+
+  candidate = Candidate.new(
+    first_name: 'Beatriz',
+    last_name: 'Assis',
+    address: 'São Paulo, Brazil',
+    nationality: 'Brazilian',
+    gender: 'Female',
+    summary: "I'm Beatriz Assis, a nurse turned tech enthusiast after completing a coding bootcamp at Le Wagon. Proficient in Ruby on Rails, JavaScript, HTML, CSS. I'm passionate about Front-End Development and UX/UI Design. My healthcare background enriches my journey, preparing me for impactful projects ahead. I'm eager to contribute to meaningful innovation in the tech industry and make a positive difference.",
+    tech_interest: ['Front-end Development', 'UX/UI Design'],
+    tech_languages: ['Ruby', 'JavaScript', 'HTML', 'CSS'],
+    preferred_companies: 'IBM, Amazon, Facebook, or Tesla',
+    user: liz_souza,
+    birth_date: Date.new(1996, 12 , 21),
+    terms_conditions: true
+  )
+
+    file = URI.open("https://images.unsplash.com/photo-1505968409348-bd000797c92e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    candidate.photo.attach(io: file, filename: "liz_souza.png", content_type: "image/png")
+    candidate.save!
+
+
 
 # # Create jobs
 job = Job.create!(
