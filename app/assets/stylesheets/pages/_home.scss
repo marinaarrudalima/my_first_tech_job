@@ -177,7 +177,7 @@
 .scroll-tech-language {
   position: relative;
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
   width: 700px;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(
@@ -192,7 +192,7 @@
 .scroll-tech-language div {
   white-space: nowrap;
   animation: animate var(--t) linear infinite;
-  animation-delay: calc(var(--t) / -1);
+  animation-delay: calc(var(--t) * -1);
 }
 
 .scroll-tech-language div:nth-child(2) {
@@ -211,10 +211,10 @@
 
 @keyframes animate2 {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-200%);
   }
 }
 
