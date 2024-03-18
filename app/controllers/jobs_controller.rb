@@ -40,7 +40,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @match = Match.new
     if current_user.present? && current_user.role_candidate?
-      @content = "<strong> Job compatibility: </strong> " + @job.content(current_user)
+      @content = @job.content(current_user)
     end
   end
 

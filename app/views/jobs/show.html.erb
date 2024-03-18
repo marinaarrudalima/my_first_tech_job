@@ -1,27 +1,36 @@
-<div class="container mt-5 mb-5">
-  <div class="container-name-company">
-    <div class="left-column">
+<div class="container-job">
+<div class="green-banner">
+  <div class="infos-left">
       <p class="banner-text mb-1"><%= @job.title %></p>
-      <p class="banner-text-small">at <%= @job.company.name %></p>
-      <div class="carddeadline mb-4"><strong>Application deadline:</strong> <%= @job.application_deadline.strftime('%d %b %Y') %></div>
-    </div>
+      <p class="banner-text-small">at
+      <%= link_to company_path(@job.company) do %>
+        <%= @job.company.name %>
+      <% end %>
+      </p>
+      <div class="carddeadline"><strong>Application deadline:</strong> <%= @job.application_deadline.strftime('%d %b %Y') %></div>
+  </div>
+    <% if current_user.role_candidate? %>
+      <div class="compability-card">
+        <h4>&lt;/&gt; Combatibility</h4> <p><%= raw @content %></p>
+      </div>
+    <% end %>
+    <% if current_user.company == @job.company %>
+      <%= link_to "Edit profile", edit_job_path, class: "btn-profile" %>
+    <% end %>
 
+  </div>
+</div>
     <%# #não está funcionando por aqui o "if current_user.role_candidate? ou o abaixo. Travei aqui pra poder fazer outras coisas. ass: Be" %>
     <%# <% if current_user && current_user.role_company != nil %>
-      <div class="right-column">
-        <div>
-          <p><%= raw @content %></p>
-        </div>
-      </div>
-    <%# end %>
-  </div>
 
-
+</div>
+<div class="container">
+<div class="job-flex">
   <div class="job-description-card mt-5">
-    <h5><strong>Job Description:</strong><h5> <p><%= @job.job_description %></p>
+    <h4>&lt;/&gt; Description</h4> <p><%= simple_format(@job.job_description) %></p>
   </div>
-
-  <div class="container-card d-flex justify-content-center ">
+</div>
+  <div class="container-card d-flex justify-content-center">
     <div class="card-job">
       <div class="box-job">
         <div class="content-job">
@@ -45,10 +54,9 @@
     <div class="card-job">
       <div class="box-job">
         <div class="content-job">
-          <h3 class="title-job mb-3"><strong>Salary/Benefits:</strong></h3>
-          <p><strong>Salary:</strong> <%= @job.salary %></p>
+          <p><strong>Salary:</strong> $<%= @job.salary %></p>
+          <p><strong>Benefits: </strong><%= @job.benefits %></p>
           <p><strong>Work Visa:</strong> <%= @job.work_visa %></p>
-          <p><%= @job.benefits %></p>
         </div>
       </div>
     </div>
@@ -67,7 +75,7 @@
     <%= simple_form_for [@job, @match] do |f| %>
       <div class="container-btn">
         <div class="row justify-content-center">
-          <%= f.submit "APPLY FOR THIS JOB", class: "btn-apply justify-content-center col-md-3" %>
+          <%= f.submit "Apply!", class: "btn-apply justify-content-center col-md-3" %>
         </div>
       </div>
     <% end %>
