@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="cards-container">
+
+      <div class="side-profile-card">
+
+        <div class="side-profile-header" >
+          <div class="side-profile-title">
+            <h1> <%= "#{@candidate.first_name} #{@candidate.last_name}" %> </h1>
+          </div>
+
+          <div>
+            <% unless @candidate.photo.attached? %>
+              <%= image_tag "blank-profile-picture.png", class: "avatar-profile-small" %>
+            <% else %>
+              <%= cl_image_tag @candidate.photo.key, :gravity=>"faces", class: "avatar-profile-small"%>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="side-profile-infos" >
+
+          <div class="side-minor-infos">
+            Based in <strong><%= @candidate.address %></strong><br>
+            From <strong><%= @candidate.nationality %></strong><br>
+            Age <strong><%= ((Time.zone.now - @candidate.birth_date.to_time) / 1.year.seconds).floor %></strong><br>
+          </div>
+
+          <div>
+            <h5 class="text-center"><strong>Summary</strong></h5>
+              <p><%= simple_format(@candidate.summary) %></p>
+          </div>
+
+          <div class="side-pills">
+            <h5 class="text-center"><strong>Tech Languages</strong></h5>
+              <% @candidate.tech_languages.each do |i|%>
+                <div class="bg-tag-side rounded-pill d-inline m-2"><%= i %></div>
+              <% end %>
+          </div>
+
+          <div class="side-pills">
+            <h5 class="text-center"><strong>Tech Interests</strong></h5>
+              <% @candidate.tech_interest.each do |i|%>
+                <div class="bg-tag-side rounded-pill d-inline m-2"><%= i %></div>
+              <% end %>
+          </div>
+        </div>
+
+        </div>
+
+
+
+
+
+
+      </div>
+  </div>
+</div>

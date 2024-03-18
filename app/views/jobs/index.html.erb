@@ -14,21 +14,21 @@
             placeholder: "Search by position, company or location"%>
         <% end %>
 
-        <label class="toggle mt-3">
-        <%= link_to jobs_path(toggle_params(:newest_first)), id: "sort-toggle", class: "toggle-link #{'active' if params[:order] == 'newest_first'}" do %>
-          <label class="switch">
-            <p class="toggle-text">most recent</p>
+        <label class="toggle1 mt-3">
+        <%= link_to jobs_path(toggle_params(:newest_first)), id: "sort-toggle", class: "toggle-link1 #{'active' if params[:order] == 'newest_first'}" do %>
+          <label class="switch1">
+            <p class="toggle-text1">Most Recent</p>
             <%= check_box_tag 'newest_first', '1', params[:order] == 'newest_first', style: 'display: none;' %>
-            <span class="slider round"></span>
+            <span class="slider1 round"></span>
           </label>
         <% end %>
         </label>
-        <label class="toggle mt-3">
-        <%= link_to jobs_path(toggle_params(:closest_deadline)), id: "deadline-toggle", class: "toggle-link #{'active' if params[:order] == 'closest_deadline'}" do %>
-          <label class="switch">
-            <p class="toggle-text">nearest deadline</p>
+        <label class="toggle2 mt-3">
+        <%= link_to jobs_path(toggle_params(:closest_deadline)), id: "deadline-toggle", class: "toggle-link2 #{'active' if params[:order] == 'closest_deadline'}" do %>
+          <label class="switch2">
+            <p class="toggle-text2">Nearest Deadline</p>
             <%= check_box_tag 'closest_deadline', '1', params[:order] == 'closest_deadline', style: 'display: none;' %>
-            <span class="slider round"></span>
+            <span class="slider2 round"></span>
           </label>
         <% end %>
       </label>
@@ -41,7 +41,7 @@
     <div class="cards-container">
       <% unless @jobs.blank? %>
         <% @jobs.each do |job| %>
-          <%= link_to job_path(job), class:"h-100 text-decoration-none m-3" do %>
+          <%= link_to job_path(job), class:"text-decoration-none m-3" do %>
             <div class="card-gray-bottom">
               <div class="card-product">
                 <%= cl_image_tag job.company.logo.key, crop: :fill%>
@@ -55,9 +55,9 @@
                     <p class="bg-tag rounded-pill d-inline-block px-3 py-1 mt-1"><%=tag%></p>
                     <% end %>
                   </div>
-                  <div class="d-flex justify-content-between w-100">
-                    <p><b>Location: </b><%= job.location %></p>
-                    <p><b>Deadline: </b><%= job.application_deadline.strftime('%d %b %Y') %></p>
+                  <div class="minor-info">
+                    <p><b>Location: </b><br><%= job.location %></p>
+                    <p><b>Deadline: </b><br><%= job.application_deadline.strftime('%d %b %Y') %></p>
                   </div>
                 </div>
               </div>

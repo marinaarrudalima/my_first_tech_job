@@ -1,22 +1,22 @@
-.switch {
+.switch1 {
   position: relative;
   display: inline-block;
-  width: 150px;
-  height: 40px;
+  width: 130px;
+  height: 30px;
   text-decoration:none;
   margin-top: 5px;
   margin-right: 5px;
 }
 
 /* Hide default HTML checkbox */
-.switch input {
+.switch1 input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
 /* The slider */
-.slider {
+.slider1 {
   position: absolute;
   cursor: default;
   top: 0;
@@ -28,29 +28,29 @@
   transition: .4s;
 }
 
-.slider:before {
+.slider1:before {
   position: absolute;
   content: "";
   height: 15px;
   width: 15px;
   right: 8px;
-  bottom: 13px;
+  bottom: 9px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #889889;
+input:checked + .slider1 {
+  background-color: $lighter-green;
   box-shadow: 0 0 3px #757575;
   transition: 1s;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #757575;
+input:focus + .slider1 {
+  box-shadow: 0 0 1px $aubergine;
 }
 
-input:checked + .slider:before {
+input:checked + .slider1:before {
   -webkit-transform: translateX(0px);
   -ms-transform: translateX(0px);
   transform: translateX(0px);
@@ -58,28 +58,125 @@ input:checked + .slider:before {
 }
 
 /* Rounded sliders */
-.slider.round {
+.slider1.round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.slider1.round:before {
   border-radius: 50%;
 }
 
-.toggle {
+.toggle1 {
   display:flex;
   align-items:center;
 }
 
 
-.switch p {
+.switch1 p {
   position: relative;
   z-index: 9998!important;
   right:9px;
-  top:8px;
+  top:3px;
   display:flex;
   color: #757575;
   font-size:15px;
   display:flex;
   justify-content:center;
+}
+
+//////////////////
+
+
+.switch2 {
+  position: relative;
+  display: inline-block;
+  width: 165px;
+  height: 30px;
+  text-decoration:none;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+/* Hide default HTML checkbox */
+.switch2 input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider2 {
+  position: absolute;
+  cursor: default;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #DDDDDD;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider2:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  right: 8px;
+  bottom: 9px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider2 {
+  background-color: $lighter-green;
+  box-shadow: 0 0 3px #757575;
+  transition: 1s;
+}
+
+input:focus + .slider2 {
+  box-shadow: 0 0 1px $aubergine;
+}
+
+input:checked + .slider2:before {
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+  color: $platinum;
+}
+
+/* Rounded sliders */
+.slider2.round {
+  border-radius: 34px;
+}
+
+.slider2.round:before {
+  border-radius: 50%;
+}
+
+.toggle2 {
+  display:flex;
+  align-items:center;
+}
+
+
+.switch2 p {
+  position: relative;
+  z-index: 9998!important;
+  right:9px;
+  top:3px;
+  display:flex;
+  color: #757575;
+  font-size:15px;
+  display:flex;
+  justify-content:center;
+}
+
+/* minor info - são as infos de deadline e location no bottom do card*/
+
+.minor-info{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
 }

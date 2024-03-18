@@ -5,7 +5,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 140px 0;
+  padding: 160px 0;
   text-align: center;
   color: #FFFFFF;
 }
@@ -96,7 +96,6 @@
   align-items: center;
   text-align: center;
   color: #584c58;
-
 }
 
 .txt-icons h3 {
@@ -142,7 +141,7 @@
   background-clip: text;
   background-repeat: no-repeat;
   background-size: 0% 100%;
-  background-image: linear-gradient(#171718, #171718);
+  background-image: linear-gradient($aubergine, #171718);
   animation: scroll-reveal linear forwards;
   animation-timeline: view();
 }
@@ -177,7 +176,7 @@
 .scroll-tech-language {
   position: relative;
   display: flex;
-  flex-direction: column;
+  //flex-direction: column;
   width: 700px;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(
@@ -192,7 +191,7 @@
 .scroll-tech-language div {
   white-space: nowrap;
   animation: animate var(--t) linear infinite;
-  animation-delay: calc(var(--t) / -1);
+  animation-delay: calc(var(--t) * -1);
 }
 
 .scroll-tech-language div:nth-child(2) {
@@ -211,10 +210,10 @@
 
 @keyframes animate2 {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-200%);
   }
 }
 
@@ -288,6 +287,9 @@
 
 .cta-button:hover {
   background-color: #584c58;
+  border-style: solid;
+  border-width: 3px 3px 3px 3px;
+  border-color: #FFFFFF;
   transition: transform 0.2s;
   transform: scale(1.02);
 }

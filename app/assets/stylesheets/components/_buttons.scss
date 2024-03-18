@@ -27,6 +27,27 @@
   box-shadow: 1px 1px 2px;
 }
 
+.btn-small-dark {
+  padding: 8px 16px;
+  background-color: #7363723b;
+  color: #736372;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 1px 1px 2px;
+  transition: background-color 0.3s ease;
+
+  #match-job{
+    text-decoration: none;
+  }
+}
+
+.btn-small-dark:hover {
+  background-color: #7363726a;
+  box-shadow: 1px 1px 2px;
+}
+
 .btn-small-aubergine {
   display:flex;
   background-color: #7363723b;

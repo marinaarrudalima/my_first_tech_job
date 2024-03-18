@@ -1,0 +1,84 @@
+.card-matches-job-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // margin-bottom: 20px;
+  margin: auto;
+}
+
+.card-match-job {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 24px;
+  border-radius: 8px;
+  width: 900px;
+  max-height: 200px;
+  box-shadow: 1px 1px 2px #73637278;
+  color:$aubergine;
+  margin-bottom: 32px;
+}
+
+.candidate-details {
+  padding:6px;
+  margin-left: 10px;
+  color: #736372;
+}
+
+.candidate-details-top {
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.candidate-details-name {
+  display:flex;
+  flex-direction: column;
+  padding: 2px;
+
+  p{
+    font-size: 12px;
+  }
+
+  a{
+    text-decoration: line;
+    color:#736372;
+  }
+}
+
+.match-change {
+  display:flex;
+  align-items: baseline;
+  gap: 5px;
+  color: #736372;
+}
+
+
+.buttons-match-job{
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+
+  a{
+    text-decoration: none;
+    color:#736372;
+  }
+}
+
+.candidate-details-bottom{
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0px;
+}
+
+.doa-match-job {
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-end;
+
+  p{
+    font-size: 12px;
+  }
+}

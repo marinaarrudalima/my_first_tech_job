@@ -1,0 +1,48 @@
+<div class="card-matches-job-container">
+  <div class="side-profile-card">
+    <div class="side-profile-header" >
+      <div class="side-profile-title">
+        <h1> <%= "#{match.candidate.first_name} #{match.candidate.last_name}" %> </h1>
+      </div>
+
+    <div>
+      <% unless match.candidate.photo.attached? %>
+        <%= image_tag "blank-profile-picture.png", class: "avatar-profile-small" %>
+      <% else %>
+        <%= cl_image_tag match.candidate.photo.key, :gravity=>"faces", class: "avatar-profile-small"%>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="side-profile-infos" >
+
+      <div class="side-minor-infos">
+        Based in <strong><%= match.candidate.address %></strong><br>
+        From <strong><%= match.candidate.nationality %></strong><br>
+        Age <strong><%= ((Time.zone.now - match.candidate.birth_date.to_time) / 1.year.seconds).floor %></strong><br>
+      </div>
+
+      <div class="summary">
+        <h5 class="text-center"><strong>Summary</strong></h5>
+          <p><%= simple_format(match.candidate.summary) %></p>
+      </div>
+
+      <div class="pills-container">
+        <div class="side-pills">
+        <h5 class="text-center"><strong>Tech Languages</strong></h5>
+          <% match.candidate.tech_languages.each do |i|%>
+            <div class="bg-tag-side rounded-pill d-inline my-2 mx-auto"><%= i %></div>
+          <% end %>
+        </div>
+
+          <div class="side-pills">
+          <h5 class="text-center"><strong>Tech Interests</strong></h5>
+            <% match.candidate.tech_interest.each do |i|%>
+              <div class="bg-tag-side rounded-pill d-inline my-2 mx-auto"><%= i %></div>
+            <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
