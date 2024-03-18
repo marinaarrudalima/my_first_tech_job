@@ -17,10 +17,6 @@ class CandidatesController < ApplicationController
     @candidate = Candidate.find(params[:id])
   end
 
-  def temp
-    @candidate = Candidate.find(params[:id])
-  end
-
   def edit
     @candidate = Candidate.find(params[:id])
   end
