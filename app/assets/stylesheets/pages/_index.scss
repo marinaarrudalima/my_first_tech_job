@@ -5,4 +5,5 @@
 @import "show_job";
 @import "companies_show";
 @import "jobs_index";
-
+@import "side_profile"; /*Aqui para ser aplicado na partial de'candidate_side' in matches*/
+@import "match_job"; /*Match de Job no detalhe*/
