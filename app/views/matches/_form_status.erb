@@ -1,0 +1,6 @@
+<%= simple_form_for match do |f| %>
+  <div class = "match-change">
+  <%= f.input :status, label: false, collection: [['Submitted', :Submitted], ['Review', :Review], ['First Interview', :First_interview], ['Second Interview', :Second_interview], ['Job Offer', :Job_offer], ['Onboarded', :Onboarded],['Rejected', :Rejected]], class:"statuses-collection" %>
+  <%= f.submit "Change", class:"btn-change" %>
+  </div>
+<% end %>

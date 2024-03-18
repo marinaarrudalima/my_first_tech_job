@@ -1,34 +1,45 @@
 <% if current_user.company %>
-  <div class="container">
-    <h2><strong>Matches for Job <%= @job.title %></h2></strong>
 
-    <div class="card-matches-job-container">
-      <% @matches.each do |match| %>
-        <div class="card-match-job">
-          <div class="card-match-job-info">
-          <%= link_to candidate_path(match.candidate) do %>
-            <%= cl_image_tag match.candidate.photo.key %>
-          <% end %>
-            <div class="candidate-details">
-                  <p>
-                  <strong>Candidate:</strong> <%= match.candidate.first_name %> <%= match.candidate.last_name %></p>
-                  <p><strong>Application status:</strong> <%= match.status.gsub(/_/,' ') %></p>
-                  <%= simple_form_for match do |f| %>
-                    <div class = "match-change">
-                    <%= f.input :status, label: false, collection: [['Submitted', :Submitted], ['Review', :Review], ['First Interview', :First_interview], ['Second Interview', :Second_interview], ['Job Offer', :Job_offer], ['Onboarded', :Onboarded],['Rejected', :Rejected]], class:"statuses-collection" %>
-                    <%= f.submit "Change", class:"btn-change" %>
-                    </div>
-                    <div class="buttons-match-job">
-                    <%= link_to 'View Profile', candidate_path(match.candidate), class: "btn-dark" %>
-                    <%= link_to 'View CV', rails_blob_url(match.candidate.cv_upload, disposition: "attachment"), target: "_blank", class: "btn-dark" %></div>
+  <div class="container mx-auto"  data-controller="toggle">
+    <h2><strong>Matches for Job <%= @job.title %></h2></strong>
+      <div class="card-matches-job-container">
+        <% @matches.each do |match| %>
+            <div class="card-match-job">
+              <div class="candidate-details-top">
+                <div class="candidate-details-name">
+                  <p class="mb-0">Candidate</p>
+                  <%= link_to candidate_path(match.candidate), target: "_blank" do %>
+                    <h4><strong><%= match.candidate.first_name %> <%= match.candidate.last_name %></strong></h4>
                   <% end %>
-                </li>
-              </ul>
-              <div class="doa-match-job">Date of application: <%= match.candidate.created_at.strftime("%d %b %Y %H:%M") %></div>
+                </div>
+                <div class="buttons-match-job">
+                  <div data-action="click->toggle#open" data-toggle-target="button" data-toggle-id-value="<%= match.id %>">
+                    <button class="btn-small-dark" id="match-job">View Profile</button>
+                  </div>
+                  <div>
+                    <button class="btn-small-dark" id="match-job"><%= link_to 'View CV', rails_blob_url(match.candidate.cv_upload, disposition: "attachment"), target: "_blank" %></button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class= "candidate-details-bottom">
+                <div class="mb-0">
+                  <p><strong>Application status:</strong> <%= match.status.gsub(/_/,' ') %></p>
+                  <%= render "form_status", match: match %>
+                </div>
+
+                <div class="doa-match-job">
+                  <p class="mb-0"><b>Date of application: </b></p>
+                  <p class="mb-0"><%= match.candidate.created_at.strftime("%d %b %Y %H:%M") %></p>
+                </div>
+              </div>
             </div>
+
+          <div data-toggle-target="side" data-toggle-id-value="<%= match.id %>" class="d-none">
+            <%= render "candidate_side", match: match %>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
   </div>
 <% end %>
